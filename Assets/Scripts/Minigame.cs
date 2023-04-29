@@ -19,6 +19,8 @@ public class Minigame : MonoBehaviour
     // unity events allow wiring up stuff in the editor
     [field:SerializeField] public UnityEvent<MinigameResult> OnEndGame { get; private set; }
 
+    protected MinigameResult result;
+
 
 
     void Awake()
@@ -33,7 +35,7 @@ public class Minigame : MonoBehaviour
 
     public void EndGame()
     {
-        EndGame(default(MinigameResult));
+        EndGame(result);
     }
 
     public void EndGame(MinigameResult result)

@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Events;
+
 
 
 public class SliderBar : MonoBehaviour
 {
+    [field:SerializeField] public UnityEvent OnGameEnd { get; private set; }
 
     [SerializeField] GameObject SliderBarFrame;
     [SerializeField] GameObject SliderBarArrow;
@@ -96,8 +99,11 @@ public class SliderBar : MonoBehaviour
         // Reset
         if (stage >= dialog.GetLength(0))
         {
+            OnGameEnd?.Invoke();
+            this.enabled = false;
             stage = 0;
             response = "";
+            return;
         }
 
         string part = "";

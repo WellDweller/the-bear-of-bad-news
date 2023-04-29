@@ -13,7 +13,7 @@ public class SceneInitializer : MonoBehaviour
     {
         if (Instance != null)
         {
-            DestroyImmediate(this);
+            DestroyImmediate(gameObject);
             return;
         }
 

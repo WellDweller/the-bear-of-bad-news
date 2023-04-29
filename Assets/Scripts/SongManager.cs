@@ -61,7 +61,7 @@ public class SongManager : MonoBehaviour
     {
         if (Instance != null)
         {
-            DestroyImmediate(this);
+            DestroyImmediate(gameObject);
             return;
         }
 

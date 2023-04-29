@@ -12,7 +12,8 @@ public class SliderBar : Minigame
     [SerializeField] GameObject SliderBarArrow;
     [SerializeField] GameObject SliderBarGood;
     [SerializeField] GameObject SliderBarMed;
-    [SerializeField] TMPro.TextMeshProUGUI textMesh;
+
+    [SerializeField] TextBubble[] textBubbles;
 
     private float minX;
     private float maxX;
@@ -40,6 +41,8 @@ public class SliderBar : Minigame
     [SerializeField] string[,] dialog = { { "i'm sorry, your", "ur", "ya" }, { "husband", "mate", "boi" }, { "passed away peacefully", "ate it", "ded" } };
 
     [SerializeField] string response = "";
+
+
 
     void Start()
     {
@@ -124,9 +127,13 @@ public class SliderBar : Minigame
     void updateResponse(string s)
     {
         response = response + " " + s;
-        // print(response);
-        textMesh.text = response;
-        // textMeshPro.SetText(response);
         result.text = response;
+
+        if (stage < textBubbles.Length)
+        {
+            var bubs = textBubbles[stage];
+            bubs.Text = s;
+            bubs.StartTyping();
+        }
     }
 }

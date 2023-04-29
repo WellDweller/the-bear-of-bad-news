@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,13 +13,17 @@ public class SongManager : MonoBehaviour
 
     public AudioSource mainSongAudioSource;
 
+    [SerializeField] public List<AudioClip> miniGameAudioClips;
+    private AudioSource miniGameAudioSource;
+
     void Start()
     {
-        // mainSongAudioSource = GetComponent<AudioSource>();
     }
 
     public void PlayMainSong()
     {
+        StopMinigameSong();
+
         if (!mainSongAudioSource.isPlaying)
         {
             mainSongAudioSource.Play();
@@ -29,6 +35,25 @@ public class SongManager : MonoBehaviour
         if (mainSongAudioSource.isPlaying)
         {
             mainSongAudioSource.Pause();
+        }
+    }
+
+    public void PlayMinigameSong()
+    {
+        PauseMainSong();
+
+        int randomIndex = Random.Range(0, miniGameAudioClips.Count);
+        AudioClip randomClip = miniGameAudioClips[randomIndex];
+        miniGameAudioSource.clip = randomClip;
+        miniGameAudioSource.loop = true;
+        miniGameAudioSource.Play();
+    }
+
+    public void StopMinigameSong()
+    {
+        if (miniGameAudioSource.isPlaying)
+        {
+            miniGameAudioSource.Stop();
         }
     }
 
@@ -47,8 +72,11 @@ public class SongManager : MonoBehaviour
         if (IsInitialized)
             return;
 
-        IsInitialized = true;
+        miniGameAudioSource = gameObject.AddComponent<AudioSource>();
 
+        mainSongAudioSource.loop = true;
         PlayMainSong();
+
+        IsInitialized = true;
     }
 }

@@ -58,6 +58,8 @@ public class MinigameLoader : MonoBehaviour
 
         SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
         loadedMinigameScene = SceneManager.GetSceneByName(sceneName);
+
+        SongManager.Instance.PlayMinigameSong();
     }
 
     void UnloadMinigame()
@@ -70,6 +72,8 @@ public class MinigameLoader : MonoBehaviour
         loadedMinigame = null;
         SceneManager.UnloadSceneAsync(loadedMinigameScene);
         loadedMinigameScene = default(Scene);
+
+        SongManager.Instance.PlayMainSong();
     }
 
 

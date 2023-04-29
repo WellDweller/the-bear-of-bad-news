@@ -8,6 +8,8 @@ public class Bear : MonoBehaviour
 
     [field:SerializeField] public UnityEvent OnIdle { get; private set; }
 
+    [field:SerializeField] public UnityEvent OnWalk { get; private set; }
+
     [SerializeField] float lookAtClipboardDelay;
 
     Animator animator;
@@ -29,6 +31,11 @@ public class Bear : MonoBehaviour
     public void Idle(float delay)
     {
         StartCoroutine(PlayAnimation("Idle", delay, 0, OnIdle));
+    }
+
+    public void Walk(float delay)
+    {
+        StartCoroutine(PlayAnimation("Walk", delay, 0, OnWalk));
     }
 
     IEnumerator PlayAnimation(string animationName, float delay, float duration, UnityEvent eventToInvoke)

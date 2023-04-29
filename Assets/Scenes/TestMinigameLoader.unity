@@ -159,9 +159,9 @@ MonoBehaviour:
   <OnMinigameEnd>k__BackingField:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 834652585}
-        m_TargetAssemblyTypeName: TextBubble, Assembly-CSharp
-        m_MethodName: StartTyping
+      - m_Target: {fileID: 1443166141}
+        m_TargetAssemblyTypeName: MinigameResultBubble, Assembly-CSharp
+        m_MethodName: TypeMinigameResult
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -745,17 +745,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6420a6a41a5b4911bbde1024ea6214d, type: 3}
---- !u!114 &834652585 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1704078308446295467, guid: a6420a6a41a5b4911bbde1024ea6214d, type: 3}
+--- !u!1 &1443166134 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8038106010504583842, guid: a6420a6a41a5b4911bbde1024ea6214d, type: 3}
   m_PrefabInstance: {fileID: 834652584}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+--- !u!114 &1443166141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443166134}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 580967761cc084fa7b5cb56603e3a12e, type: 3}
+  m_Script: {fileID: 11500000, guid: ba1adb74a7647485a9a253aba7e3cc17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loader: {fileID: 114434912}
 --- !u!1001 &1551338290
 PrefabInstance:
   m_ObjectHideFlags: 0

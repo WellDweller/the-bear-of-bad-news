@@ -96,7 +96,7 @@ public class SliderBar : Minigame
         // Reset
         if (stage >= dialog.GetLength(0))
         {
-            EndGame();
+            EndGame(new MinigameResult { text = response });
             this.enabled = false;
             stage = 0;
             response = "";

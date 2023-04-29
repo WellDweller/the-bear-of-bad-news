@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class Conversation : MonoBehaviour
 {
     [field:SerializeField] public UnityEvent OnConversationEnd { get; private set; }
+    [field:SerializeField] public UnityEvent OnRoundEnd { get; private set; }
 
     [Header("Text bubbles for questions")]
     [SerializeField] TextBubble patientQuestion;
@@ -44,6 +45,13 @@ public class Conversation : MonoBehaviour
         if (currentLoop >= loops)
             OnConversationEnd?.Invoke();
         else
-            StartConversation();
+            OnRoundEnd?.Invoke();
+    }
+
+    public void HideAll()
+    {
+        patientQuestion.Hide();
+        bearAnswer.Hide();
+        patientResponse.Hide();
     }
 }

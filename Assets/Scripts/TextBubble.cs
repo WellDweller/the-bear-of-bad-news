@@ -38,7 +38,13 @@ public class TextBubble : MonoBehaviour
     void Awake()
     {
         canvasGroup = GetComponent<CanvasGroup>();
+        Reset();
+    }
 
+
+
+    public void Reset()
+    {
         if (!startVisible)
             textMesh.text = "";
 

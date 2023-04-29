@@ -127,5 +127,6 @@ public class SliderBar : Minigame
         // print(response);
         textMesh.text = response;
         // textMeshPro.SetText(response);
+        result.text = response;
     }
 }

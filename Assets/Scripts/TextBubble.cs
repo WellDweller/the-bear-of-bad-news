@@ -23,6 +23,7 @@ public class TextBubble : MonoBehaviour
 
     [field:SerializeField] public UnityEvent OnDialogEnd { get; private set; }
 
+    [SerializeField] bool startVisible;
     [SerializeField] bool startTypingImmediately;
     [SerializeField] float delayBefore;
     [SerializeField] float delayBetweenCharacters;
@@ -38,10 +39,12 @@ public class TextBubble : MonoBehaviour
     {
         canvasGroup = GetComponent<CanvasGroup>();
 
-        textMesh.text = "";
+        if (!startVisible)
+            textMesh.text = "";
+
         if (startTypingImmediately)
             StartTyping();
-        else
+        else if (!startVisible)
             Hide();
     }
 

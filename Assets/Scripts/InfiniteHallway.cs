@@ -1,25 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
+
+
+[RequireComponent(typeof(Mover))]
 public class InfiniteHallway : MonoBehaviour
 {
-    public bool IsMoving { get; private set; }
-
-
-
-    [field:SerializeField] public UnityEvent OnStartMoving { get; private set; }
-
-    [field:SerializeField] public UnityEvent OnStopMoving { get; private set; }
-
-    [SerializeField] float moveSpeed;
-
-    // For testing; used like a button in the editor;
-    [Header("Debugging/Testing")]
-    [SerializeField] bool startMove;
-    [SerializeField] bool stopMove;
-    
     [SerializeField] SpriteRenderer hallwaySprite;
 
     float walkedDistance;
@@ -27,6 +12,8 @@ public class InfiniteHallway : MonoBehaviour
     Vector3 startingPosition;
     Vector3 clonedOffset;
     SpriteRenderer clonedHallwaySprite;
+
+    Mover mover;
 
 
     void Awake()
@@ -39,51 +26,26 @@ public class InfiniteHallway : MonoBehaviour
         startingPosition = hallwaySprite.transform.position;
         spriteWidth = hallwaySprite.bounds.size.x;
         clonedOffset = new(spriteWidth, 0, 0);
+        mover = GetComponent<Mover>();
+        mover.OnMove += Move;
+    }
+
+    void OnDestroy()
+    {
+        mover.OnMove -= Move;
     }
 
 
 
     // Update is called once per frame
-    void Update()
+    void Move(float amount)
     {
-        if (startMove)
-        {
-            startMove = false;
-            StartMoving();
-        }
-        if (stopMove)
-        {
-            stopMove = false;
-            StopMoving();
-        }
-
-        if (!IsMoving)
-            return;
-        
-        walkedDistance += moveSpeed * Time.deltaTime;
+        walkedDistance += amount;
         walkedDistance %= spriteWidth;
 
         Vector3 offset = new(-walkedDistance, 0, 0);
         var newPosition = startingPosition + offset;
         hallwaySprite.transform.position = newPosition;
         clonedHallwaySprite.transform.position = newPosition + clonedOffset;
-    }
-
-
-
-    public void StartMoving()
-    {
-        if (IsMoving)
-            return;
-        IsMoving = true;
-        OnStartMoving?.Invoke();
-    }
-
-    public void StopMoving()
-    {
-        if (!IsMoving)
-            return;
-        IsMoving = false;
-        OnStopMoving?.Invoke();
     }
 }

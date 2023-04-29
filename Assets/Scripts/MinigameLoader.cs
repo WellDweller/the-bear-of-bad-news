@@ -1,4 +1,4 @@
-using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Events;
@@ -16,10 +16,13 @@ public class MinigameLoader : MonoBehaviour
 
     [SerializeField] string testSceneToLoad;
 
+    [SerializeField] List<string> minigameScenes;
+
     bool CanLoadMinigame => loadedMinigame == null && loadedMinigame == null;
 
     Scene loadedMinigameScene;
     Minigame loadedMinigame;
+
     
 
     void Awake()
@@ -38,6 +41,12 @@ public class MinigameLoader : MonoBehaviour
     }
 
 
+
+    public void LoadRandomMinigame()
+    {
+        var sceneName = minigameScenes[Random.Range(0, minigameScenes.Count)];
+        LoadMinigameScene(sceneName);
+    }
 
     // scene must be added to the build config, or SceneManager won't be able to load it
     public void LoadMinigameScene(string sceneName)

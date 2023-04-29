@@ -7,6 +7,8 @@ using UnityEngine.Events;
 
 public class MinigameLoader : MonoBehaviour
 {
+    public MinigameResult LastResult { get; private set; }
+
     // unity events allow wiring up stuff in the editor
     [field:SerializeField] public UnityEvent<Minigame> OnMinigameLoad { get; private set; }
 
@@ -18,7 +20,7 @@ public class MinigameLoader : MonoBehaviour
 
     Scene loadedMinigameScene;
     Minigame loadedMinigame;
-
+    
 
     void Awake()
     {
@@ -80,6 +82,7 @@ public class MinigameLoader : MonoBehaviour
     void HandleMinigameEnded(MinigameResult result)
     {
         Debug.Log($"Minigame result text: {result.text}");
+        LastResult = result;
         UnloadMinigame();
     }
 }

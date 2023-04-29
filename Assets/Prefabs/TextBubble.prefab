@@ -164,6 +164,7 @@ GameObject:
   - component: {fileID: 5970240291358994383}
   - component: {fileID: 6257241996444497358}
   - component: {fileID: 110783586033979900}
+  - component: {fileID: 2890691582289257609}
   m_Layer: 0
   m_Name: TextBubble
   m_TagString: Untagged
@@ -204,6 +205,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 580967761cc084fa7b5cb56603e3a12e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <OnDialogStart>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  <OnDialogEnd>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  delayBefore: 0
+  delayBetweenCharacters: 0
+  delayAfter: 0
   text: 
   textMesh: {fileID: 8038106010238397317}
 --- !u!114 &8236333706037025415
@@ -284,3 +294,15 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &2890691582289257609
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8038106010504583842}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0

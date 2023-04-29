@@ -1,22 +1,66 @@
 using System.Collections;
 using System.Text;
 using UnityEngine;
+using UnityEngine.Events;
+
+
 
 public class TextBubble : MonoBehaviour
 {
+    // unity events allow wiring up stuff in the editor
+    [field:SerializeField] public UnityEvent OnDialogStart { get; private set; }
+
+    [field:SerializeField] public UnityEvent OnDialogEnd { get; private set; }
+
+    [SerializeField] bool startTypingImmediately;
+    [SerializeField] float delayBefore;
     [SerializeField] float delayBetweenCharacters;
+    [SerializeField] float delayAfter;
     [SerializeField, TextArea] string text;
     [SerializeField] TMPro.TextMeshProUGUI textMesh;
 
+    CanvasGroup canvasGroup;
+
+    bool isTyping;
+
     void Awake()
     {
+        canvasGroup = GetComponent<CanvasGroup>();
+
         textMesh.text = "";
+        if (startTypingImmediately)
+            StartTyping();
+        else
+            Hide();
+    }
+
+    public void StartTyping()
+    {
+        if (isTyping)
+            throw new System.Exception("Already typing!");
+
+        Show();
         StartCoroutine(Typewrite(text));
+    }
+
+    public void Show()
+    {
+        canvasGroup.alpha = 1;
+    }
+
+    public void Hide()
+    {
+        canvasGroup.alpha = 0;
     }
 
     IEnumerator Typewrite(string text)
     {
+        OnDialogStart?.Invoke();
+        isTyping = true;
         StringBuilder sb = new(text.Length);
+
+        if (delayBefore > 0f)
+            yield return new WaitForSeconds(delayBefore);
 
         for (int i = 0; i < text.Length; i++)
         {
@@ -24,5 +68,11 @@ public class TextBubble : MonoBehaviour
             textMesh.text = sb.ToString();
             yield return new WaitForSeconds(delayBetweenCharacters);
         }
+
+        if (delayBefore > 0f)
+            yield return new WaitForSeconds(delayAfter);
+
+        isTyping = false;
+        OnDialogEnd?.Invoke();
     }
 }

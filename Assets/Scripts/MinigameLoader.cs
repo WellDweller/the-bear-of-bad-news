@@ -1,9 +1,17 @@
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
+
+
 
 public class MinigameLoader : MonoBehaviour
 {
+    // unity events allow wiring up stuff in the editor
+    [field:SerializeField] public UnityEvent<Minigame> OnMinigameLoad { get; private set; }
+
+    [field:SerializeField] public UnityEvent<Minigame> OnMinigameEnd { get; private set; }
+
     [SerializeField] string testSceneToLoad;
 
     bool CanLoadMinigame => loadedMinigame == null && loadedMinigame == null;
@@ -58,14 +66,14 @@ public class MinigameLoader : MonoBehaviour
     void HandleMinigameLoaded(Minigame game)
     {
         Debug.Log("Minigame loaded");
-
+        OnMinigameLoad?.Invoke(game);
         game.OnEndGame.AddListener(HandleMinigameEnded);
     }
 
     void HandleMinigameUnloaded(Minigame game)
     {
         Debug.Log("Minigame unloaded");
-
+        OnMinigameEnd?.Invoke(game);
         game.OnEndGame.RemoveListener(HandleMinigameEnded);
     }
 

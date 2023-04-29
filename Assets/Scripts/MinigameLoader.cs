@@ -77,8 +77,9 @@ public class MinigameLoader : MonoBehaviour
         game.OnEndGame.RemoveListener(HandleMinigameEnded);
     }
 
-    void HandleMinigameEnded()
+    void HandleMinigameEnded(MinigameResult result)
     {
+        Debug.Log($"Minigame result text: {result.text}");
         UnloadMinigame();
     }
 }

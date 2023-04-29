@@ -6,10 +6,8 @@ using UnityEngine.Events;
 
 
 
-public class SliderBar : MonoBehaviour
+public class SliderBar : Minigame
 {
-    [field:SerializeField] public UnityEvent OnGameEnd { get; private set; }
-
     [SerializeField] GameObject SliderBarFrame;
     [SerializeField] GameObject SliderBarArrow;
     [SerializeField] GameObject SliderBarGood;
@@ -98,7 +96,7 @@ public class SliderBar : MonoBehaviour
         // Reset
         if (stage >= dialog.GetLength(0))
         {
-            OnGameEnd?.Invoke();
+            EndGame();
             this.enabled = false;
             stage = 0;
             response = "";

@@ -86,8 +86,7 @@ public class SliderBar : MonoBehaviour
         }
         SliderArrowTransform.localPosition = new Vector3(arrowX, SliderArrowTransform.localPosition.y, SliderArrowTransform.localPosition.z);
 
-
-        if (Input.GetKeyDown("space"))
+        if (InputSystem.InputActions.UI.Submit.WasPerformedThisFrame())
         {
             evaluateArrow(arrowX);
         }

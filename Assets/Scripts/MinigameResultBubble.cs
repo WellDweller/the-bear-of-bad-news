@@ -20,7 +20,11 @@ public class MinigameResultBubble : MonoBehaviour
 
     public void TypeMinigameResult()
     {
-        textBubble.Text = loader.LastResult.text;
+        if (loader.LastResult.text != null)
+        {
+            textBubble.Text = loader.LastResult.text;
+        }
+
         textBubble.StartTyping();
     }
 }

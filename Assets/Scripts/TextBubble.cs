@@ -7,6 +7,17 @@ using UnityEngine.Events;
 
 public class TextBubble : MonoBehaviour
 {
+    public string Text
+    {
+        get => text;
+        set
+        {
+            if (isTyping)
+                throw new System.Exception("Can't change text when typing in progress!");
+            text = value;
+        }
+    }
+
     // unity events allow wiring up stuff in the editor
     [field:SerializeField] public UnityEvent OnDialogStart { get; private set; }
 

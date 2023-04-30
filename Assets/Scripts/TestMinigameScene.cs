@@ -14,6 +14,8 @@ public class TestMinigameScene : Minigame
 
     [SerializeField] List<string> response = new List<string>();
 
+    [SerializeField] int points = 0;
+
     [SerializeField] TextBubble[] textBubbles;
 
     void Start()
@@ -23,7 +25,8 @@ public class TestMinigameScene : Minigame
     public void Speak()
     {
         // They're mashing the button, they want to quit now
-        if (stage >= 3) {
+        if (stage >= 3)
+        {
             EndGame(this.result);
             return;
         }
@@ -40,10 +43,14 @@ public class TestMinigameScene : Minigame
             // Green
             color = new Color(150 / 255f, 200 / 255f, 100 / 255f);
             SongManager.Instance?.PlaySFX("success");
-        } else if (idx == 1)
+            points += 2;
+        }
+        else if (idx == 1)
         {
             SongManager.Instance?.PlaySFX("medium");
-        } else if (idx == 2)
+            points += 1;
+        }
+        else if (idx == 2)
         {
             // Red
             color = new Color(250 / 255f, 130 / 255f, 110 / 255f);
@@ -57,10 +64,10 @@ public class TestMinigameScene : Minigame
 
 
         // Check whether we're done and prepare the result text
-        if (stage == 2)
+        if (stage == dialog.GetLength(0) - 1)
         {
             string joined = string.Join(" ", response);
-            this.result = new MinigameResult { text = joined };
+            this.result = new MinigameResult { text = joined, score = points };
             this.enabled = false;
             stage = 0;
             response = new List<string>();

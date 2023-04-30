@@ -1181,9 +1181,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  dialog: {fileID: 1964413380196037106, guid: 41f2c2fbec9cd4085a3a3e2cae40770b, type: 3}
   patientQuestion: {fileID: 1551338291}
   bearAnswer: {fileID: 834652585}
-  patientResponse: {fileID: 189174072}
   loader: {fileID: 114434912}
   loops: 5
 --- !u!1 &1092231837

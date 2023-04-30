@@ -122,17 +122,20 @@ public class SliderBar : Minigame
         {
             points = 2;
             part = dialog[stage, 0];
+            // part = dialog.responses["good"][stage];
             SongManager.Instance?.PlaySFX("success");
         }
         else if (medicalFormBox.HighlightRange.IsInRange(percent))
         {
             points = 1;
             part = dialog[stage, 1];
+            // part = dialog.responses["med"][stage];
             SongManager.Instance?.PlaySFX("medium");
         }
         else
         {
             part = dialog[stage, 2];
+            // part = dialog.responses["bad"][stage];
             SongManager.Instance?.PlaySFX("negative");
         }
 

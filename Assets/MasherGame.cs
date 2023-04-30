@@ -141,6 +141,9 @@ public class MasherGame : Minigame
             if (points == 2)
                 // Green
                 color = new Color(150 / 255f, 200 / 255f, 100 / 255f);
+            else if (points == 1)
+                // Yellow
+                color = new Color(227 / 255f, 218 / 255f, 87 / 255f);
             else if (points == 0)
                 // Red
                 color = new Color(250 / 255f, 130 / 255f, 110 / 255f);

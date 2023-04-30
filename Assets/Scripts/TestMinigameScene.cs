@@ -47,6 +47,8 @@ public class TestMinigameScene : Minigame
         }
         else if (idx == 1)
         {
+            // Yellow
+            color = new Color(227 / 255f, 218 / 255f, 87 / 255f);
             SongManager.Instance?.PlaySFX("medium");
             points += 1;
         }

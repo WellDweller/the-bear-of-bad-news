@@ -15,6 +15,7 @@ public class SongManager : MonoBehaviour
 
     [SerializeField] public List<AudioClip> miniGameAudioClips;
     private AudioSource miniGameAudioSource;
+    private HashSet<int> playedMinigameSongIndices;
 
     public AudioClip typingAudioClip;
     private AudioSource typingAudioSource;
@@ -50,9 +51,8 @@ public class SongManager : MonoBehaviour
     {
         if (InputSystem.InputActions.Debug.DebugSound.WasPerformedThisFrame())
         {
-            PlaySFX("negative");
+            PlayMinigameSong();
         }
-
     }
 
     void Awake()
@@ -66,18 +66,25 @@ public class SongManager : MonoBehaviour
 
         Instance = this;
 
+        // Keep alive across scenes
         DontDestroyOnLoad(this);
 
         if (IsInitialized)
             return;
 
+        // Minigame Songs
         miniGameAudioSource = gameObject.AddComponent<AudioSource>();
+        playedMinigameSongIndices = new HashSet<int>();
 
+        // Typing Sounds
         typingAudioSource = gameObject.AddComponent<AudioSource>();
 
+        // Footstep Sounds
         footstepsAudioSource = gameObject.AddComponent<AudioSource>();
 
+        // Main Song
         mainSongAudioSource.loop = true;
+
         PlayMainSong();
 
         // Setup SFX
@@ -203,9 +210,27 @@ public class SongManager : MonoBehaviour
     {
         PauseMainSong();
 
-        int randomIndex = Random.Range(0, miniGameAudioClips.Count);
-        AudioClip randomClip = miniGameAudioClips[randomIndex];
-        miniGameAudioSource.clip = randomClip;
+        // If all songs have been played, clear the set of played song indices
+        if (playedMinigameSongIndices.Count == miniGameAudioClips.Count)
+        {
+            Debug.Log("All minigame songs have been played, resetting.");
+            playedMinigameSongIndices.Clear();
+        }
+
+        int songIndex;
+        do
+        {
+            // Pick a random song index
+            songIndex = Random.Range(0, miniGameAudioClips.Count);
+        }
+        // Keep generating random song indices until an unplayed one is found
+        while (playedMinigameSongIndices.Contains(songIndex));
+
+        // Add the chosen song index to the played set
+        playedMinigameSongIndices.Add(songIndex);
+
+        // Play the song
+        miniGameAudioSource.clip = miniGameAudioClips[songIndex];
         miniGameAudioSource.loop = true;
         miniGameAudioSource.Play();
     }

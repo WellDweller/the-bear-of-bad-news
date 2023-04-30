@@ -8,6 +8,8 @@ using UnityEngine.Events;
 
 public class SliderBar : Minigame
 {
+    [SerializeField] MedicalFormBox medicalFormBox;
+
     [SerializeField] GameObject SliderBarFrame;
     [SerializeField] GameObject SliderBarArrow;
     [SerializeField] GameObject SliderBarGood;
@@ -53,13 +55,16 @@ public class SliderBar : Minigame
         startValue = minX;
         endValue = maxX;
 
-        float goodWidth = SliderBarGood.GetComponent<RectTransform>().rect.width;
-        goodMin = 0 - goodWidth / 2;
-        goodMax = goodWidth / 2;
+        // float goodWidth = SliderBarGood.GetComponent<RectTransform>().rect.width;
+        // goodMin = 0 - goodWidth / 2;
+        // goodMax = goodWidth / 2;
 
-        float medWidth = SliderBarMed.GetComponent<RectTransform>().rect.width;
-        medMin = 0 - medWidth / 2;
-        medMax = medWidth / 2;
+        // float medWidth = SliderBarMed.GetComponent<RectTransform>().rect.width;
+        // medMin = 0 - medWidth / 2;
+        // medMax = medWidth / 2;
+
+        medicalFormBox.HighlightRange = new MinMaxRange(.35f);
+        medicalFormBox.UnderlineRange = new MinMaxRange(.15f);
     }
 
     void Update()
@@ -95,7 +100,8 @@ public class SliderBar : Minigame
 
     void evaluateArrow(float x)
     {
-
+        var percent = (x - minX) / (maxX - minX);
+        
         // Reset
         if (stage >= dialog.GetLength(0))
         {
@@ -107,21 +113,22 @@ public class SliderBar : Minigame
         }
 
         string part = "";
-        if (x >= goodMin && x <= goodMax)
+        if (medicalFormBox.UnderlineRange.IsInRange(percent))
         {
             part = dialog[stage, 0];
             SongManager.Instance?.PlaySFX("success");
         }
-        else if (x >= medMin && x <= medMax)
+        else if (medicalFormBox.HighlightRange.IsInRange(percent))
         {
             part = dialog[stage, 1];
             SongManager.Instance?.PlaySFX("medium");
         }
-        else // badboi
+        else
         {
             part = dialog[stage, 2];
             SongManager.Instance?.PlaySFX("negative");
         }
+
         updateResponse(part);
         // print(part);
         stage += 1;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Text;
 using UnityEngine;
 using UnityEngine.Events;
-
+using UnityEngine.UI;
 
 
 public class TextBubble : MonoBehaviour
@@ -31,6 +31,9 @@ public class TextBubble : MonoBehaviour
     [SerializeField, TextArea] string text;
     [SerializeField] TMPro.TextMeshProUGUI textMesh;
 
+    Image bubbleImage;
+
+
     CanvasGroup canvasGroup;
 
     bool isTyping;
@@ -38,6 +41,7 @@ public class TextBubble : MonoBehaviour
     void Awake()
     {
         canvasGroup = GetComponent<CanvasGroup>();
+        bubbleImage = GetComponent<Image>();
         Reset();
     }
 
@@ -52,19 +56,27 @@ public class TextBubble : MonoBehaviour
             StartTyping();
         else if (!startVisible)
             Hide();
+        else
+            Show(Color.white);
     }
 
     public void StartTyping()
     {
+        StartTyping(Color.white);
+    }
+
+    public void StartTyping(Color color)
+    {
         if (isTyping)
             throw new System.Exception("Already typing!");
 
-        Show();
+        Show(color);
         StartCoroutine(Typewrite(text));
     }
 
-    public void Show()
+    public void Show(Color color)
     {
+        bubbleImage.color = color;
         canvasGroup.alpha = 1;
     }
 

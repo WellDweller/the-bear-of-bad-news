@@ -114,15 +114,17 @@ public class SliderBar : Minigame
         }
 
         string part = "";
+        int points = 0;
+
         if (medicalFormBox.UnderlineRange.IsInRange(percent))
         {
-            result.score += 2;
+            points = 2;
             part = dialog[stage, 0];
             SongManager.Instance?.PlaySFX("success");
         }
         else if (medicalFormBox.HighlightRange.IsInRange(percent))
         {
-            result.score += 1;
+            points = 1;
             part = dialog[stage, 1];
             SongManager.Instance?.PlaySFX("medium");
         }
@@ -132,21 +134,27 @@ public class SliderBar : Minigame
             SongManager.Instance?.PlaySFX("negative");
         }
 
-        updateResponse(part);
+        updateResponse(part, points);
         // print(part);
         stage += 1;
     }
 
-    void updateResponse(string s)
+    void updateResponse(string s, int points)
     {
         response = response + " " + s;
         result.text = response;
+        result.score += points;
 
         if (stage < textBubbles.Length)
         {
             var bubs = textBubbles[stage];
             bubs.Text = s;
-            bubs.StartTyping();
+            Color color = Color.white;
+            if (points == 2)
+                color = Color.green;
+            else if (points == 0)
+                color = Color.red;
+            bubs.StartTyping(color);
         }
     }
 }

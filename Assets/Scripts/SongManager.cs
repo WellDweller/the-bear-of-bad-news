@@ -55,7 +55,6 @@ public class SongManager : MonoBehaviour
     {
         if (InputSystem.InputActions.Debug.DebugSound.WasPerformedThisFrame())
         {
-            PlayAttentionStaff();
         }
     }
 

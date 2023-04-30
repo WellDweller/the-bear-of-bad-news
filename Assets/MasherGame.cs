@@ -82,10 +82,12 @@ public class MasherGame : Minigame
         if (medicalFormBox.UnderlineRange.IsInRange(percent))
         {
             part = dialog[stage, 0];
+            result.score += 2;
             SongManager.Instance?.PlaySFX("success");
         }
         else if (medicalFormBox.HighlightRange.IsInRange(percent))
         {
+            result.score += 1;
             part = dialog[stage, 1];
             SongManager.Instance?.PlaySFX("medium");
         }
@@ -101,7 +103,8 @@ public class MasherGame : Minigame
 
         if (stage >= dialog.GetLength(0))
         {
-            EndGame(new MinigameResult { text = response });
+            result.text = response;
+            EndGame(result);
             this.enabled = false;
             stage = 0;
             response = "";

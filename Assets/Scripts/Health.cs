@@ -32,6 +32,11 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(MinigameResult result)
     {
+        TakeDamage();
+    }
+
+    public void TakeDamage()
+    {
         if (currentHealth <= 0)
             throw new System.Exception("Took damage after already dead!");
         

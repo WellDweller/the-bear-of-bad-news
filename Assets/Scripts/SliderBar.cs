@@ -105,7 +105,8 @@ public class SliderBar : Minigame
         // Reset
         if (stage >= dialog.GetLength(0))
         {
-            EndGame(new MinigameResult { text = response });
+            result.text = response;
+            EndGame();
             this.enabled = false;
             stage = 0;
             response = "";
@@ -115,11 +116,13 @@ public class SliderBar : Minigame
         string part = "";
         if (medicalFormBox.UnderlineRange.IsInRange(percent))
         {
+            result.score += 2;
             part = dialog[stage, 0];
             SongManager.Instance?.PlaySFX("success");
         }
         else if (medicalFormBox.HighlightRange.IsInRange(percent))
         {
+            result.score += 1;
             part = dialog[stage, 1];
             SongManager.Instance?.PlaySFX("medium");
         }

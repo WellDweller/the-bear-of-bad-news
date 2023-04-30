@@ -15,6 +15,8 @@ public class Score : MonoBehaviour
 {
     [field:SerializeField] public UnityEvent<ScoreUpdate> OnScore { get; private set; }
 
+    [field:SerializeField] public UnityEvent OnNoScore { get; private set; }
+
 
 
     [field:SerializeField] public int Value { get; private set; }
@@ -33,7 +35,10 @@ public class Score : MonoBehaviour
 
     public void HandleMinigameResult(MinigameResult result)
     {
-        AddPoints(10);
+        if (result.score > 0)
+            AddPoints(result.score);
+        else
+            OnNoScore?.Invoke();
     }
 
     public void Reset()

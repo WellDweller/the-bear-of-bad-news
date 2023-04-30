@@ -6,6 +6,8 @@ using UnityEngine.Events;
 public struct MinigameResult
 {
     public string text;
+
+    public int score;
 }
 
 

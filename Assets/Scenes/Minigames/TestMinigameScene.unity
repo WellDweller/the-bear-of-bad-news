@@ -309,7 +309,7 @@ PrefabInstance:
     - target: {fileID: 6064305122748370111, guid: 3c0c68706732d4838944553e96126d6c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 5182793993780024571}
+      objectReference: {fileID: 0}
     - target: {fileID: 6064305122748370111, guid: 3c0c68706732d4838944553e96126d6c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: EndGame
@@ -578,7 +578,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5182793993780024570}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a26c72a81f2bc4736ad4e1eb91b39cd7, type: 3}
+  m_Script: {fileID: 11500000, guid: f2a2cf1cf814e4f2192f4eb3d9cdef64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   <OnEndGame>k__BackingField:

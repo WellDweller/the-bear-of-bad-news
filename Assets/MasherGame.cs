@@ -139,9 +139,11 @@ public class MasherGame : Minigame
             bubs.Text = s;
             Color color = Color.white;
             if (points == 2)
-                color = Color.green;
+                // Green
+                color = new Color(150 / 255f, 200 / 255f, 100 / 255f);
             else if (points == 0)
-                color = Color.red;
+                // Red
+                color = new Color(250 / 255f, 130 / 255f, 110 / 255f);
             bubs.StartTyping(color);
         }
     }

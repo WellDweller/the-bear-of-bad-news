@@ -20,7 +20,7 @@ public struct MinMaxRange
 
     public MinMaxRange(float size)
     {
-        var halfSize = size/2f;
+        var halfSize = size / 2f;
         var randomPosition = Random.Range(halfSize, 1f - halfSize);
         min = randomPosition - halfSize;
         max = randomPosition + halfSize;
@@ -34,8 +34,8 @@ public class MedicalFormBox : MonoBehaviour
     [SerializeField] RectTransform highlightRect;
     [SerializeField] RectTransform underlineRect;
 
-    [field:SerializeField] public MinMaxRange HighlightRange { get; set; }
-    [field:SerializeField] public MinMaxRange UnderlineRange { get; set; }
+    [field: SerializeField] public MinMaxRange HighlightRange { get; set; }
+    [field: SerializeField] public MinMaxRange UnderlineRange { get; set; }
 
 
     bool logged;

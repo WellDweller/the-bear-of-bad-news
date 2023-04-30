@@ -16,6 +16,8 @@ if $DRY_RUN; then
   find_files
 else
   echo "Deleting files..."
-  find_files -exec rm -v {} \;
+  find_files | while read -r file; do
+    rm -v "$file"
+  done
   echo "Deletion complete."
 fi

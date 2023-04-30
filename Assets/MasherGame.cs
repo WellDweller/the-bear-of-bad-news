@@ -11,7 +11,6 @@ public class MasherGame : Minigame
     [SerializeField] TextBubble[] textBubbles;
 
     [SerializeField] float x = 0;
-    [SerializeField] float foo = 0;
     [SerializeField] float step = 10;
     [SerializeField] float degradeSpeed = 50;
     [SerializeField] float minX = 0;
@@ -29,6 +28,7 @@ public class MasherGame : Minigame
     // Start is called before the first frame update
     void Start()
     {
+        randomizeStage();
     }
 
     // Update is called once per frame
@@ -76,7 +76,7 @@ public class MasherGame : Minigame
 
     void evaluateArrow()
     {
-        var percent = x;
+        var percent = x / 100;
 
         string part = "";
         if (medicalFormBox.UnderlineRange.IsInRange(percent))
@@ -99,6 +99,7 @@ public class MasherGame : Minigame
 
         elapsedTime = 0;
         updateResponse(part);
+        randomizeStage();
         stage += 1;
 
         if (stage >= dialog.GetLength(0))
@@ -110,6 +111,14 @@ public class MasherGame : Minigame
             response = "";
             return;
         }
+    }
+
+    void randomizeStage()
+    {
+        x = minX;
+        medicalFormBox.HighlightRange = new MinMaxRange(.35f);
+        medicalFormBox.UnderlineRange = new MinMaxRange(.15f);
+        degradeSpeed = Random.Range(30, 60);
     }
 
     void updateResponse(string s)

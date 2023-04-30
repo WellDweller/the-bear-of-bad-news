@@ -62,14 +62,27 @@ public class SliderBar : Minigame
         // medMin = 0 - medWidth / 2;
         // medMax = medWidth / 2;
 
+        lerpDuration = Random.Range(0.5f, 1.5f);
+
+        randomizeStage();
+    }
+
+    void randomizeStage()
+    {
         medicalFormBox.HighlightRange = new MinMaxRange(.35f);
         medicalFormBox.UnderlineRange = new MinMaxRange(.15f);
+        // direction = Random.value < 0.5f ? -1 : 1;
     }
 
     void Update()
     {
         if (!IsStarted || IsComplete)
             return;
+
+        if (stage == dialog.GetLength(0))
+        {
+            return;
+        }
 
         if (timeElapsed < lerpDuration)
         {
@@ -142,6 +155,10 @@ public class SliderBar : Minigame
         updateResponse(part, points);
         // print(part);
         stage += 1;
+        if (stage != dialog.GetLength(0))
+        {
+            randomizeStage();
+        }
     }
 
     void updateResponse(string s, int points)

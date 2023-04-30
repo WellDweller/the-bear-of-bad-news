@@ -1,7 +1,7 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
-
-
 
 public class Conversation : MonoBehaviour
 {
@@ -9,6 +9,8 @@ public class Conversation : MonoBehaviour
     [field:SerializeField] public UnityEvent OnRoundEnd { get; private set; }
 
     [SerializeField] Dialog dialog;
+    private List<string> encounterStageNames;
+    private int currentEncounterIndex = 0;
 
     [Header("Text bubbles for questions")]
     [SerializeField] TextBubble patientQuestion;
@@ -22,12 +24,28 @@ public class Conversation : MonoBehaviour
     int currentLoop;
     bool gameOver;
 
+    void Start()
+    {
+        Debug.Log(dialog);
+        Debug.Log(dialog.Data); // null
+        // Debug.Log(dialog.Data.Keys);
+        // encounterStageNames = dialog.Data.Keys.ToList();
+        // Debug.Log(encounterStageNames);
+    }
+
+    private Encounter GetCurrentEncounterData()
+    {
+        Debug.Log(encounterStageNames[currentEncounterIndex]);
+        return dialog.Data[encounterStageNames[currentEncounterIndex]][0];
+    } 
 
     public void StartConversation()
     {
+        Encounter currentEncounter = GetCurrentEncounterData();
         patientQuestion.Reset();
         bearAnswer.Reset();
 
+        patientQuestion.Text = currentEncounter.encounterRounds[currentLoop].question;
         patientQuestion.StartTyping();
     }
 

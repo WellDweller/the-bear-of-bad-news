@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Events;
+using UnityEditor;
 
 
 
@@ -83,6 +84,13 @@ public class MinigameLoader : MonoBehaviour
     void HandleMinigameLoaded(Minigame game)
     {
         Debug.Log("Minigame loaded");
+        // game.dialog = new string[,] { {"hello", "there"}, {"whats", "up"} };
+        GameObject conversationLoader = GameObject.Find("ConversationLoader");
+        LoadJSON loadJson = conversationLoader.GetComponent<LoadJSON>();
+
+        game.dialog = loadJson.encounters["Dead Husband"][0];
+
+        
         OnMinigameLoad?.Invoke(game);
         game.OnEndGame.AddListener(HandleMinigameEnded);
     }

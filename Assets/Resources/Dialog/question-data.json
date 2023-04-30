@@ -1,0 +1,315 @@
+{
+    "Dead Husband": [
+        {
+            "You asked to see me, doctor?": {
+                "good": [
+                    "Yes, thank you for coming.",
+                    "I am afraid ",
+                    "I have some bad news for you"
+                ],
+                "med": [
+                    "I did? Ah, yes.",
+                    "So, here's the thing,",
+                    "things aren't great"
+                ],
+                "bad": [
+                    "Sup.",
+                    "...",
+                    "shit's fucked"
+                ]
+            }
+        },
+        {
+            "What is it?": {
+                "good": [
+                    "Your",
+                    "loving husband",
+                    "very regrettably",
+                    "passed away"
+                ],
+                "med": [
+                    "Ya",
+                    "mate",
+                    "has",
+                    "perished"
+                ],
+                "bad": [
+                    "ur",
+                    "boi",
+                    "done",
+                    "ate it"
+                ]
+            }
+        },
+        {
+            "What happened to him?": {
+                "good": [
+                    "He eventually",
+                    "succumbed to",
+                    "his sickness"
+                ],
+                "med": [
+                    "He",
+                    "was killed by",
+                    "the wending arm of fate"
+                ],
+                "bad": [
+                    "Boy",
+                    "got got by",
+                    "a blunder in the operating room"
+                ]
+            }
+        },
+        {
+            "Did he suffer?": {
+                "good": [
+                    "No",
+                    "It was a peaceful death",
+                    "he looked relaxed"
+                ],
+                "med": [
+                    "Well...",
+                    "Sometimes it is better not knowing",
+                    "Personally, i closed my eyes when it happened"
+                ],
+                "bad": [
+                    "Yup",
+                    "ngl, it looked like it hurt",
+                    "He did not look good (aka he looked real bad)"
+                ]
+            }
+        },
+        {
+            "What should I do?": {
+                "good": [
+                    "In situations like these",
+                    "It's very normal to",
+                    "take time to heal"
+                ],
+                "med": [
+                    "Following a traumatic event",
+                    "you can",
+                    "not know what to feel"
+                ],
+                "bad": [
+                    "After a bad do",
+                    "u can",
+                    "get lit"
+                ]
+            }
+        },
+        {
+            "Thank you doctor": {
+                "good": [
+                    "You're welcome",
+                    "I wish you the best"
+                ],
+                "med": [
+                    "Okay",
+                    "Good luck"
+                ],
+                "bad": [
+                    "I Thank me too",
+                    "I'm a bear"
+                ]
+            }
+        }
+    ],
+    "Patient": [
+        {
+            "Hello Doctor, are there any updates on the results of my test?": {
+                "good": [
+                    "Ah, terribly sorry",
+                    "Could you please tell me your",
+                    "name? sorry"
+                ],
+                "med": [
+                    "Hmm",
+                    "what is ur",
+                    "name?"
+                ],
+                "bad": [
+                    "Who are u, lol?",
+                    "do ya got a",
+                    "name, friendo?"
+                ]
+            }
+        },
+        {
+            "It's Mark, I had the scans earlier today": {
+                "good": [
+                    "Of course! Mark.",
+                    "So the results of your scan",
+                    "are not trending positive, unfortunately"
+                ],
+                "med": [
+                    "Ah, okay.",
+                    "Your scan results",
+                    "are not great"
+                ],
+                "bad": [
+                    "Not ringing ne bells.",
+                    "ur scan results",
+                    "r bleak sauce"
+                ]
+            }
+        },
+        {
+            "That sounds bad, whats the diagnosis?": {
+                "good": [
+                    "I'm afraid that",
+                    "your condition is so advanced that it",
+                    "is fatal. I'm sorry."
+                ],
+                "med": [
+                    "For most people",
+                    "your sickness",
+                    "is a killer"
+                ],
+                "bad": [
+                    "4 u m8",
+                    "ur shit",
+                    "is gonna get u ded real quick"
+                ]
+            }
+        },
+        {
+            "What should I do?": {
+                "good": [
+                    "I am afraid there is no cure",
+                    "I know this must be hard",
+                    "You have my condolences"
+                ],
+                "med": [
+                    "It is terminal",
+                    "This isn't easy",
+                    "We'll talk later"
+                ],
+                "bad": [
+                    "lol, nothing",
+                    "sucks to be u",
+                    "cya!"
+                ]
+            }
+        }
+    ],
+    "Doctor": [
+        {
+            "Doctor! Glad I caught you, I wanted to have a word": {
+                "good": [
+                    "My esteemed colleague, hello.",
+                    "What seems to be",
+                    "bothering you?"
+                ],
+                "med": [
+                    "You sure caught me.",
+                    "what's",
+                    "the problem? im busy."
+                ],
+                "bad": [
+                    "**fucking craig**",
+                    "something",
+                    "wrong with you?"
+                ]
+            }
+        },
+        {
+            "Its about the surgery you performed in room 3A": {
+                "good": [
+                    "Ah yes, of course",
+                    "what",
+                    "about it?"
+                ],
+                "med": [
+                    "okay",
+                    "and what",
+                    "specifically?"
+                ],
+                "bad": [
+                    "lol",
+                    "wot",
+                    "r u on about"
+                ]
+            }
+        },
+        {
+            "Well, there was blood everywhere in there...": {
+                "good": [
+                    "The prodcedure may have",
+                    "gone ever so slightly",
+                    "awry."
+                ],
+                "med": [
+                    "Things may have",
+                    "gone",
+                    "sideways."
+                ],
+                "bad": [
+                    "Shit ",
+                    "got",
+                    "f'ed, ya feel me?"
+                ]
+            }
+        },
+        {
+            "What do you mean?": {
+                "good": [
+                    "Well, the patient",
+                    "wasn't",
+                    "sufficently anethetized",
+                    "and became responsive"
+                ],
+                "med": [
+                    "the subject",
+                    "had not been",
+                    "properly sedated",
+                    "and woke up"
+                ],
+                "bad": [
+                    "The little shit",
+                    "ain't been",
+                    "juiced proper",
+                    "and popped off"
+                ]
+            }
+        },
+        {
+            "And then what happened?": {
+                "good": [
+                    "Unfortunately, he",
+                    "didn't make it",
+                    "Sorry to say"
+                ],
+                "med": [
+                    "He",
+                    "died",
+                    "sadly"
+                ],
+                "bad": [
+                    "lol, he",
+                    "rip",
+                    ":'-("
+                ]
+            }
+        },
+        {
+            "I am going to report this to the ethics board": {
+                "good": [
+                    "Good sir,",
+                    "I must protest your assessment.",
+                    "I have patients to attend to"
+                ],
+                "med": [
+                    "But...",
+                    "I disagree entirely.",
+                    "im out of here"
+                ],
+                "bad": [
+                    "Fuck off dude",
+                    "U an idiot",
+                    "See u in hell craig"
+                ]
+            }
+        }
+    ]
+}

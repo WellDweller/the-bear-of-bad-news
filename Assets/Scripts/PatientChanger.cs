@@ -24,6 +24,11 @@ public class PatientChanger : MonoBehaviour
         hallway.OnMove += TrackDistance;
     }
 
+    void OnDestroy()
+    {
+        hallway.OnMove -= TrackDistance;
+    }
+
 
     public void GotoNextPatient()
     {

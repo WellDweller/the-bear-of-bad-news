@@ -119,15 +119,15 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: pills
     originalName: 
-    pivot: {x: 0.4583333, y: -0.675}
+    pivot: {x: 0.41509432, y: -0.5909091}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 48
-      height: 40
+      width: 53
+      height: 44
     spriteID: 503354a719372af4d905e8664102f321
     spriteBone: []
     spriteOutline: []
@@ -150,9 +150,9 @@ ScriptedImporter:
       frameIndex: 0
       cellRect:
         x: 26
-        y: 27
-        width: 48
-        height: 40
+        y: 26
+        width: 53
+        height: 44
       spriteId: 503354a719372af4d905e8664102f321
     linkedCells: []
     parentIndex: -1

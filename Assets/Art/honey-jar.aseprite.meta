@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 401384bd4e92de54c92f4f6bba6679b5
+guid: de1716fe9d1f71c4e81946775a0456f0
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,18 +117,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: pill-bottle
+  - name: honey-jar
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.53846157, y: -0.11320755}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 41
-      height: 63
-    spriteID: 3d96a7722ecab86438421cac97b226c9
+      width: 39
+      height: 53
+    spriteID: ca272cbd471b42f4db0197de51b11801
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -140,23 +140,23 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1588839548
-    name: pill-bottle
+    guid: -690855171
+    name: honey-jar
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: pill-bottle
+    - name: honey-jar
       frameIndex: 0
       cellRect:
-        x: 0
-        y: 0
-        width: 41
-        height: 63
-      spriteId: 3d96a7722ecab86438421cac97b226c9
+        x: 11
+        y: 6
+        width: 39
+        height: 53
+      spriteId: ca272cbd471b42f4db0197de51b11801
     linkedCells: []
     parentIndex: -1
   platformSettings: []
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 41, y: 63}
+  canvasSize: {x: 64, y: 64}

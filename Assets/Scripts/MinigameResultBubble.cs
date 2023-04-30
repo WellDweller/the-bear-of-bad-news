@@ -18,11 +18,11 @@ public class MinigameResultBubble : MonoBehaviour
 
 
 
-    public void TypeMinigameResult()
+    public void TypeMinigameResult(MinigameResult result)
     {
-        if (loader.LastResult.text != null)
+        if (result.text != null)
         {
-            textBubble.Text = loader.LastResult.text;
+            textBubble.Text = result.text;
         }
 
         textBubble.StartTyping();

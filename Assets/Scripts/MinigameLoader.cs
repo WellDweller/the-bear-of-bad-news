@@ -14,6 +14,8 @@ public class MinigameLoader : MonoBehaviour
 
     [field:SerializeField] public UnityEvent<Minigame> OnMinigameEnd { get; private set; }
 
+    [field:SerializeField] public UnityEvent<MinigameResult> OnMinigameResult { get; private set; }
+
     [SerializeField] string testSceneToLoad;
 
     [SerializeField] List<string> minigameScenes;
@@ -96,6 +98,7 @@ public class MinigameLoader : MonoBehaviour
     {
         Debug.Log($"Minigame result text: {result.text}");
         LastResult = result;
+        OnMinigameResult?.Invoke(result);
         UnloadMinigame();
     }
 }

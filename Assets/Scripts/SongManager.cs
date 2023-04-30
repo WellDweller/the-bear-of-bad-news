@@ -19,6 +19,9 @@ public class SongManager : MonoBehaviour
     public AudioClip typingAudioClip;
     private AudioSource typingAudioSource;
 
+    public AudioClip footstepsAudioClip;
+    private AudioSource footstepsAudioSource;
+
     void Start()
     {
     }
@@ -72,6 +75,8 @@ public class SongManager : MonoBehaviour
 
         typingAudioSource = gameObject.AddComponent<AudioSource>();
 
+        footstepsAudioSource = gameObject.AddComponent<AudioSource>();
+
         mainSongAudioSource.loop = true;
         PlayMainSong();
 
@@ -111,11 +116,11 @@ public class SongManager : MonoBehaviour
         var sfx_negative = new List<List<AudioSource>>()
         {
             new List<AudioSource> () {
-                LoadAudioClip("SFX/big_negative/big_negative_1", 0.3f),
-                LoadAudioClip("SFX/big_negative/big_negative_2", volume: 0.2f),
+                LoadAudioClip("SFX/big_negative/big_negative_1", volume: 0.7f),
+                LoadAudioClip("SFX/big_negative/big_negative_2", volume: 0.3f),
             },
             new List<AudioSource> () {
-                LoadAudioClip("SFX/small_negative/small_negative_1", volume: 0.1f),
+                LoadAudioClip("SFX/small_negative/small_negative_1", volume: 0.5f),
             },
             new List<AudioSource> () {
                 LoadAudioClip("SFX/breaking/breaking_celery"),
@@ -229,5 +234,21 @@ public class SongManager : MonoBehaviour
     {
         Debug.Log("Pause typing!");
         typingAudioSource.Pause();
+    }
+
+    //
+    // Footsteps
+    //
+
+    public void PlayFootsteps()
+    {
+        footstepsAudioSource.clip = footstepsAudioClip;
+        footstepsAudioSource.loop = true;
+        footstepsAudioSource.Play();
+    }
+
+    public void PauseFootsteps()
+    {
+        footstepsAudioSource.Pause();
     }
 }

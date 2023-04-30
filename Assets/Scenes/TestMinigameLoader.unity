@@ -315,7 +315,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8038106010238397316, guid: a6420a6a41a5b4911bbde1024ea6214d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 22.7
       objectReference: {fileID: 0}
     - target: {fileID: 8038106010238397316, guid: a6420a6a41a5b4911bbde1024ea6214d, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -841,7 +841,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8038106010238397316, guid: a6420a6a41a5b4911bbde1024ea6214d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 22.7
       objectReference: {fileID: 0}
     - target: {fileID: 8038106010238397316, guid: a6420a6a41a5b4911bbde1024ea6214d, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1446,7 +1446,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8038106010238397316, guid: a6420a6a41a5b4911bbde1024ea6214d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 22.7
       objectReference: {fileID: 0}
     - target: {fileID: 8038106010238397316, guid: a6420a6a41a5b4911bbde1024ea6214d, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1686,8 +1686,20 @@ PrefabInstance:
       value: Bear
       objectReference: {fileID: 0}
     - target: {fileID: 2782364070376990077, guid: db11d528ceca045a695b3d8342068d12, type: 3}
+      propertyPath: <OnIdle>k__BackingField.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2782364070376990077, guid: db11d528ceca045a695b3d8342068d12, type: 3}
+      propertyPath: <OnIdle>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2782364070376990077, guid: db11d528ceca045a695b3d8342068d12, type: 3}
       propertyPath: <OnLookAtClipboard>k__BackingField.m_PersistentCalls.m_Calls.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2782364070376990077, guid: db11d528ceca045a695b3d8342068d12, type: 3}
+      propertyPath: <OnIdle>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2782364070376990077, guid: db11d528ceca045a695b3d8342068d12, type: 3}
       propertyPath: <OnLookAtClipboard>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_Mode

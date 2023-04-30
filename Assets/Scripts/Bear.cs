@@ -30,11 +30,13 @@ public class Bear : MonoBehaviour
 
     public void Idle(float delay)
     {
+        SongManager.Instance?.PauseFootsteps();
         StartCoroutine(PlayAnimation("Idle", delay, 0, OnIdle));
     }
 
     public void Walk(float delay)
     {
+        SongManager.Instance?.PlayFootsteps();
         StartCoroutine(PlayAnimation("Walk", delay, 0, OnWalk));
     }
 

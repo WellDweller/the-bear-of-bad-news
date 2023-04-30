@@ -22,13 +22,6 @@ public class Conversation : MonoBehaviour
 
 
 
-    void Start()
-    {
-        StartConversation();
-    }
-
-
-
     public void StartConversation()
     {
         patientQuestion.Reset();

@@ -219,7 +219,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1810001584}
+    m_TransformParent: {fileID: 1031077657}
     m_Modifications:
     - target: {fileID: 1704078308446295467, guid: a6420a6a41a5b4911bbde1024ea6214d, type: 3}
       propertyPath: text
@@ -256,7 +256,7 @@ PrefabInstance:
     - target: {fileID: 1704078308446295467, guid: a6420a6a41a5b4911bbde1024ea6214d, type: 3}
       propertyPath: <OnDialogEnd>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 5481406668134071060}
+      objectReference: {fileID: 1031077658}
     - target: {fileID: 1704078308446295467, guid: a6420a6a41a5b4911bbde1024ea6214d, type: 3}
       propertyPath: <OnDialogStart>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
@@ -391,11 +391,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8038106010504583843, guid: a6420a6a41a5b4911bbde1024ea6214d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 89.60156
+      value: 110.00098
       objectReference: {fileID: 0}
     - target: {fileID: 8038106010504583843, guid: a6420a6a41a5b4911bbde1024ea6214d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 103.5
+      value: 43.250004
       objectReference: {fileID: 0}
     - target: {fileID: 8038106010504583843, guid: a6420a6a41a5b4911bbde1024ea6214d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -761,7 +761,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1810001584}
+    m_TransformParent: {fileID: 1031077657}
     m_Modifications:
     - target: {fileID: 1704078308446295467, guid: a6420a6a41a5b4911bbde1024ea6214d, type: 3}
       propertyPath: text
@@ -913,11 +913,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8038106010504583843, guid: a6420a6a41a5b4911bbde1024ea6214d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -130.40039
+      value: -110.00098
       objectReference: {fileID: 0}
     - target: {fileID: 8038106010504583843, guid: a6420a6a41a5b4911bbde1024ea6214d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 61.5
+      value: 1.2500038
       objectReference: {fileID: 0}
     - target: {fileID: 8038106010504583843, guid: a6420a6a41a5b4911bbde1024ea6214d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -944,6 +944,93 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 580967761cc084fa7b5cb56603e3a12e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1031077656
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1031077657}
+  - component: {fileID: 1031077658}
+  m_Layer: 0
+  m_Name: Conversation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1031077657
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031077656}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1551338292}
+  - {fileID: 1443166147}
+  - {fileID: 1467728361}
+  m_Father: {fileID: 1810001584}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -20.399414, y: 60.250004}
+  m_SizeDelta: {x: 265.40195, y: 120.38}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1031077658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031077656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85f3b570428134bf99aae9a8395964c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <OnConversationEnd>k__BackingField:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114434914}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: StartMenu
+          m_BoolArgument: 0
+        m_CallState: 2
+  <OnRoundEnd>k__BackingField:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1450771147}
+        m_TargetAssemblyTypeName: PatientChanger, Assembly-CSharp
+        m_MethodName: GotoNextPatient
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  patientQuestion: {fileID: 1551338291}
+  bearAnswer: {fileID: 834652585}
+  patientResponse: {fileID: 189174072}
+  loader: {fileID: 114434912}
+  loops: 5
 --- !u!1 &1166905362
 GameObject:
   m_ObjectHideFlags: 0
@@ -1071,6 +1158,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loader: {fileID: 114434912}
+--- !u!224 &1443166147 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8038106010504583843, guid: a6420a6a41a5b4911bbde1024ea6214d, type: 3}
+  m_PrefabInstance: {fileID: 834652584}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1450771146
 GameObject:
   m_ObjectHideFlags: 0
@@ -1106,7 +1198,7 @@ MonoBehaviour:
   <OnStopMoving>k__BackingField:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5481406668134071060}
+      - m_Target: {fileID: 1031077658}
         m_TargetAssemblyTypeName: Conversation, Assembly-CSharp
         m_MethodName: StartConversation
         m_Mode: 1
@@ -1122,7 +1214,7 @@ MonoBehaviour:
   hallway: {fileID: 329683788}
   currentPatient: {fileID: 830353711}
   bear: {fileID: 1798717132}
-  conversationController: {fileID: 5481406668134071060}
+  conversationController: {fileID: 1031077658}
 --- !u!4 &1450771148
 Transform:
   m_ObjectHideFlags: 0
@@ -1138,12 +1230,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &1467728361 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8038106010504583843, guid: a6420a6a41a5b4911bbde1024ea6214d, type: 3}
+  m_PrefabInstance: {fileID: 189174071}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1551338290
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1810001584}
+    m_TransformParent: {fileID: 1031077657}
     m_Modifications:
     - target: {fileID: 1704078308446295467, guid: a6420a6a41a5b4911bbde1024ea6214d, type: 3}
       propertyPath: text
@@ -1309,11 +1406,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8038106010504583843, guid: a6420a6a41a5b4911bbde1024ea6214d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 66.39844
+      value: 86.79785
       objectReference: {fileID: 0}
     - target: {fileID: 8038106010504583843, guid: a6420a6a41a5b4911bbde1024ea6214d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 17.000004
+      value: -43.25
       objectReference: {fileID: 0}
     - target: {fileID: 8038106010504583843, guid: a6420a6a41a5b4911bbde1024ea6214d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1340,6 +1437,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 580967761cc084fa7b5cb56603e3a12e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &1551338292 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8038106010504583843, guid: a6420a6a41a5b4911bbde1024ea6214d, type: 3}
+  m_PrefabInstance: {fileID: 1551338290}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1707335547
 GameObject:
   m_ObjectHideFlags: 0
@@ -1372,7 +1474,7 @@ MonoBehaviour:
   <OnSceneReady>k__BackingField:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5481406668134071060}
+      - m_Target: {fileID: 1031077658}
         m_TargetAssemblyTypeName: Conversation, Assembly-CSharp
         m_MethodName: StartConversation
         m_Mode: 1
@@ -1673,58 +1775,6 @@ PrefabInstance:
       objectReference: {fileID: 299104138}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a33e34e0c7e614f069bd2a98c5fac157, type: 3}
---- !u!1 &5481406668134071059 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5481406668484171196, guid: a33e34e0c7e614f069bd2a98c5fac157, type: 3}
-  m_PrefabInstance: {fileID: 5481406668134071058}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5481406668134071060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5481406668134071059}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85f3b570428134bf99aae9a8395964c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <OnConversationEnd>k__BackingField:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114434914}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: StartMenu
-          m_BoolArgument: 0
-        m_CallState: 2
-  <OnRoundEnd>k__BackingField:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1450771147}
-        m_TargetAssemblyTypeName: PatientChanger, Assembly-CSharp
-        m_MethodName: GotoNextPatient
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  patientQuestion: {fileID: 1551338291}
-  bearAnswer: {fileID: 834652585}
-  patientResponse: {fileID: 189174072}
-  loader: {fileID: 114434912}
-  loops: 5
 --- !u!1001 &7721771932198781265
 PrefabInstance:
   m_ObjectHideFlags: 0

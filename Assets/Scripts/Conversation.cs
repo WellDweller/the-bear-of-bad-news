@@ -33,7 +33,6 @@ public class Conversation : MonoBehaviour
 
     public void GameOver()
     {
-        HideAll();
         gameOver = true;
     }
 
@@ -42,7 +41,10 @@ public class Conversation : MonoBehaviour
         currentLoop += 1;
 
         if (gameOver || currentLoop >= loops)
+        {
+            HideAll();
             OnConversationEnd?.Invoke();
+        }
         else
             OnRoundEnd?.Invoke();
     }

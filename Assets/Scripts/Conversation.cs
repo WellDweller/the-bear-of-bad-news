@@ -19,7 +19,7 @@ public class Conversation : MonoBehaviour
     [SerializeField, Min(1)] int loops;
 
     int currentLoop;
-
+    bool gameOver;
 
 
     public void StartConversation()
@@ -31,11 +31,16 @@ public class Conversation : MonoBehaviour
         patientQuestion.StartTyping();
     }
 
+    public void GameOver()
+    {
+        gameOver = true;
+    }
+
     public void EndConversation()
     {
         currentLoop += 1;
 
-        if (currentLoop >= loops)
+        if (gameOver || currentLoop >= loops)
             OnConversationEnd?.Invoke();
         else
             OnRoundEnd?.Invoke();

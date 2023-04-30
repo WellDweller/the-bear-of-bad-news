@@ -16,5 +16,6 @@ public class JSONImporter : UnityEditor.AssetImporters.ScriptedImporter
         dialogAsset.SetData(data);
 
         ctx.AddObjectToAsset("new dialog", dialogAsset);
+        ctx.SetMainObject(dialogAsset);
     }
 }

@@ -26,8 +26,10 @@ public class Conversation : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("dialog: ");
         Debug.Log(dialog);
-        Debug.Log(dialog.Data); // null
+        Debug.Log("dialog.Data:");
+        Debug.Log(dialog.Data);
         // Debug.Log(dialog.Data.Keys);
         // encounterStageNames = dialog.Data.Keys.ToList();
         // Debug.Log(encounterStageNames);

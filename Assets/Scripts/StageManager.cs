@@ -13,7 +13,15 @@ public class StageManager : MonoBehaviour
     void Start()
     {
         var startPosition = bear.transform.position;
-        float offset = Camera.main.pixelWidth / 100f;
+
+        var camera = Camera.main;
+        var renderedHeight = 2 * camera.orthographicSize;
+
+        var ratio = camera.pixelHeight / renderedHeight;
+        var renderedWidth = camera.pixelWidth / ratio;
+
+        float offset = renderedWidth / 2;
+
         bear.transform.position -= new Vector3(offset, 0, 0);
 
         float trackedMovement = 0;

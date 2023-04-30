@@ -110,14 +110,17 @@ public class SliderBar : Minigame
         if (x >= goodMin && x <= goodMax)
         {
             part = dialog[stage, 0];
+            SongManager.Instance.PlaySFX("success");
         }
         else if (x >= medMin && x <= medMax)
         {
             part = dialog[stage, 1];
+            SongManager.Instance.PlaySFX("medium");
         }
         else // badboi
         {
             part = dialog[stage, 2];
+            SongManager.Instance.PlaySFX("negative");
         }
         updateResponse(part);
         // print(part);

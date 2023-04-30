@@ -19,11 +19,11 @@ public class Encounter
 {
     public string name;
 
-    public List<EncounterStage> encounterStages;
+    public List<EncounterRound> encounterRounds;
 }
 
 [System.Serializable]
-public class EncounterStage {
+public class EncounterRound {
     public string question;
 
     public Dictionary<string, List<string>> responses;

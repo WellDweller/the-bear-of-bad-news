@@ -85,10 +85,6 @@ public class MinigameLoader : MonoBehaviour
     {
         Debug.Log("Minigame loaded");
         // game.dialog = new string[,] { {"hello", "there"}, {"whats", "up"} };
-        GameObject conversationLoader = GameObject.Find("ConversationLoader");
-        LoadJSON loadJson = conversationLoader.GetComponent<LoadJSON>();
-
-        game.dialog = loadJson.encounters["Dead Husband"][0];
 
         
         OnMinigameLoad?.Invoke(game);

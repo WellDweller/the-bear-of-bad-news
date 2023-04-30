@@ -23,9 +23,6 @@ public class Minigame : MonoBehaviour
 
     protected MinigameResult result;
 
-    // public string[,] dialog = { { "i'm sorry, your", "ur", "ya" }, { "husband", "mate", "boi" }, { "passed away peacefully", "ate it", "ded" } };
-    public EncounterStage dialog;
-
 
 
     void Awake()

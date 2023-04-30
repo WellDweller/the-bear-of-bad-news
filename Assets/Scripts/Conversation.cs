@@ -8,10 +8,11 @@ public class Conversation : MonoBehaviour
     [field:SerializeField] public UnityEvent OnConversationEnd { get; private set; }
     [field:SerializeField] public UnityEvent OnRoundEnd { get; private set; }
 
+    [SerializeField] Dialog dialog;
+
     [Header("Text bubbles for questions")]
     [SerializeField] TextBubble patientQuestion;
     [SerializeField] TextBubble bearAnswer;
-    [SerializeField] TextBubble patientResponse;
 
     [Header("Other config")]
     [SerializeField] MinigameLoader loader;
@@ -26,7 +27,6 @@ public class Conversation : MonoBehaviour
     {
         patientQuestion.Reset();
         bearAnswer.Reset();
-        patientResponse.Reset();
 
         patientQuestion.StartTyping();
     }
@@ -53,6 +53,5 @@ public class Conversation : MonoBehaviour
     {
         patientQuestion.Hide();
         bearAnswer.Hide();
-        patientResponse.Hide();
     }
 }

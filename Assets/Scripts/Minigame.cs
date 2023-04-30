@@ -21,8 +21,13 @@ public class Minigame : MonoBehaviour
     // unity events allow wiring up stuff in the editor
     [field:SerializeField] public UnityEvent<MinigameResult> OnEndGame { get; private set; }
 
+    [field:SerializeField] public UnityEvent OnCompleteGame { get; private set; }
+
     protected MinigameResult result;
 
+    protected bool IsStarted { get; private set; }
+
+    protected bool IsComplete { get; private set; }
 
 
     void Awake()
@@ -33,6 +38,17 @@ public class Minigame : MonoBehaviour
     void OnDestroy()
     {
         OnMinigameUnloaded?.Invoke(this);
+    }
+
+    public void StartGame()
+    {
+        IsStarted = true;
+    }
+
+    public void CompleteGame()
+    {
+        IsComplete = true;
+        OnCompleteGame?.Invoke();
     }
 
     public void EndGame()

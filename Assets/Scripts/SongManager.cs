@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 
 using UnityEngine;
@@ -22,6 +23,9 @@ public class SongManager : MonoBehaviour
 
     public AudioClip footstepsAudioClip;
     private AudioSource footstepsAudioSource;
+
+    [SerializeField] public List<AudioClip> attentionStaffClips;
+    private AudioSource attentionStaffAudioSource;
 
     void Start()
     {
@@ -51,7 +55,7 @@ public class SongManager : MonoBehaviour
     {
         if (InputSystem.InputActions.Debug.DebugSound.WasPerformedThisFrame())
         {
-            PlayMinigameSong();
+            PlayAttentionStaff();
         }
     }
 
@@ -84,8 +88,11 @@ public class SongManager : MonoBehaviour
 
         // Main Song
         mainSongAudioSource.loop = true;
-
         PlayMainSong();
+
+        // Attention Staff
+        attentionStaffAudioSource = gameObject.AddComponent<AudioSource>();
+        StartCoroutine(WaitAndPlayAttentionStaff());
 
         // Setup SFX
         var sfx_click = new List<List<AudioSource>>()
@@ -249,7 +256,6 @@ public class SongManager : MonoBehaviour
 
     public void PlayTyping()
     {
-        Debug.Log("Play typing!");
         typingAudioSource.clip = typingAudioClip;
         typingAudioSource.loop = true;
         typingAudioSource.Play();
@@ -257,7 +263,6 @@ public class SongManager : MonoBehaviour
 
     public void PauseTyping()
     {
-        Debug.Log("Pause typing!");
         typingAudioSource.Pause();
     }
 
@@ -275,5 +280,43 @@ public class SongManager : MonoBehaviour
     public void PauseFootsteps()
     {
         footstepsAudioSource.Pause();
+    }
+
+    //
+    // Attention Staff
+    //
+
+    IEnumerator WaitAndPlayAttentionStaff()
+    {
+        int minuteToPlayOn = Random.Range(0, 3);
+        Debug.Log("Will play attention staff on minute " + minuteToPlayOn);
+        bool hasPlayed = false;
+
+        // Wait for at least 15 seconds
+        yield return new WaitForSeconds(15);
+
+        while (!hasPlayed)
+        {
+            int currentMinute = System.DateTime.Now.Minute;
+
+            // Check if the current minute modulo 3 is equal to the random number
+            if (currentMinute % 3 == minuteToPlayOn || true)
+            {
+                PlayAttentionStaff();
+                hasPlayed = true;
+            }
+
+            // Wait for 1 second before checking again
+            yield return new WaitForSeconds(1);
+        }
+    }
+
+    private void PlayAttentionStaff()
+    {
+        Debug.Log("Playing attention staff message.");
+        var idx = Random.Range(0, attentionStaffClips.Count);
+        attentionStaffAudioSource.clip = attentionStaffClips[idx];
+        attentionStaffAudioSource.loop = false;
+        attentionStaffAudioSource.Play();
     }
 }

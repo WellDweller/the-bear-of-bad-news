@@ -5,7 +5,7 @@ public class ButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 {
     public void OnPointerEnter(PointerEventData eventData)
     {
-        SongManager.Instance.PlaySFX("hover");
+        SongManager.Instance?.PlaySFX("hover");
     }
 
     public void OnPointerExit(PointerEventData eventData)

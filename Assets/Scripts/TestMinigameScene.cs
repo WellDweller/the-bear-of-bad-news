@@ -33,10 +33,28 @@ public class TestMinigameScene : Minigame
         string text = dialog[stage][idx];
         response.Add(text);
 
+        // Play sounds and choose color
+        Color color = Color.white;
+        if (idx == 0)
+        {
+            // Green
+            color = new Color(150 / 255f, 200 / 255f, 100 / 255f);
+            SongManager.Instance?.PlaySFX("success");
+        } else if (idx == 1)
+        {
+            SongManager.Instance?.PlaySFX("medium");
+        } else if (idx == 2)
+        {
+            // Red
+            color = new Color(250 / 255f, 130 / 255f, 110 / 255f);
+            SongManager.Instance?.PlaySFX("negative");
+        }
+
         // Update text bubbles
         var bubs = textBubbles[stage];
         bubs.Text = text;
-        bubs.StartTyping();
+        bubs.StartTyping(color);
+
 
         // Check whether we're done and prepare the result text
         if (stage == 2)

@@ -16,6 +16,9 @@ public class SongManager : MonoBehaviour
     [SerializeField] public List<AudioClip> miniGameAudioClips;
     private AudioSource miniGameAudioSource;
 
+    public AudioClip typingAudioClip;
+    private AudioSource typingAudioSource;
+
     void Start()
     {
     }
@@ -66,6 +69,8 @@ public class SongManager : MonoBehaviour
             return;
 
         miniGameAudioSource = gameObject.AddComponent<AudioSource>();
+
+        typingAudioSource = gameObject.AddComponent<AudioSource>();
 
         mainSongAudioSource.loop = true;
         PlayMainSong();
@@ -206,5 +211,23 @@ public class SongManager : MonoBehaviour
         {
             miniGameAudioSource.Stop();
         }
+    }
+
+    //
+    // Typing
+    //
+
+    public void PlayTyping()
+    {
+        Debug.Log("Play typing!");
+        typingAudioSource.clip = typingAudioClip;
+        typingAudioSource.loop = true;
+        typingAudioSource.Play();
+    }
+
+    public void PauseTyping()
+    {
+        Debug.Log("Pause typing!");
+        typingAudioSource.Pause();
     }
 }

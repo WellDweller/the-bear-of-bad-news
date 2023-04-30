@@ -18,6 +18,10 @@ public class TestMinigameScene : Minigame
 
     [SerializeField] TextBubble[] textBubbles;
 
+    [SerializeField] TMPro.TextMeshProUGUI[] buttonTextMeshes;
+
+    string[] buttonText = { "RROOOAAARRRR!", "GRRROOWWLLL!", "HUUUFFFFF!", "SNNAARRRRLL!", "YOOOWWWL!", "WHUUUUFFF" };
+
     void Start()
     {
     }
@@ -75,7 +79,25 @@ public class TestMinigameScene : Minigame
             response = new List<string>();
         }
 
+        randomizeButtonText();
+
         stage++;
+    }
+
+    void randomizeButtonText()
+    {
+        // Shuffle array
+        for (int i = 0; i < buttonText.Length; i++)
+        {
+            string temp = buttonText[i];
+            int randomIndex = Random.Range(i, buttonText.Length);
+            buttonText[i] = buttonText[randomIndex];
+            buttonText[randomIndex] = temp;
+        }
+        for (int i = 0; i < buttonTextMeshes.Length; i++)
+        {
+            buttonTextMeshes[i].text = buttonText[i];
+        }
     }
 
     void Update()

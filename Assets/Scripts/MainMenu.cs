@@ -8,10 +8,12 @@ public class MainMenu : MonoBehaviour
     public void HandlePlayButton()
     {
         SceneManager.LoadScene(sceneName);
+        SongManager.Instance.PlaySFX("click");
     }
 
     public void HandleQuitButton()
     {
+        SongManager.Instance.PlaySFX("click");
         Debug.Log("Quitting Application");
         Application.Quit();
     }

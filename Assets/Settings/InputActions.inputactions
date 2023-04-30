@@ -1,5 +1,5 @@
 {
-    "name": "BadNewsBear",
+    "name": "InputActions",
     "maps": [
         {
             "name": "Player",
@@ -767,6 +767,34 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "TrackedDeviceOrientation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Debug",
+            "id": "fd7ab7c6-9e13-4ea0-9255-0399deee121d",
+            "actions": [
+                {
+                    "name": "DebugSound",
+                    "type": "Button",
+                    "id": "d8010eb1-681b-4cad-96f1-ece99fcd7e36",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "f7d7ed65-a58d-4a41-b629-126538dd5d49",
+                    "path": "<Keyboard>/#(P)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DebugSound",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -831,7 +831,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 6aa9270d2cc8ec9408ff173838c1b799, type: 3}
   - {fileID: 8300000, guid: 89aa33016f75983428e0c76ef61c195f, type: 3}
   - {fileID: 8300000, guid: f6f3228426d6e624bb558dfacc8d5275, type: 3}
-  typingAudioClip: {fileID: 8300000, guid: bd4d45a5f230cf24c8b0440ffaf17c54, type: 3}
+  typingAudioClip: {fileID: 8300000, guid: d055549d99b19bc41ba597f7aeb24d02, type: 3}
   footstepsAudioClip: {fileID: 8300000, guid: 561513a2e7949ef43b45c6a6a647dca7, type: 3}
 --- !u!4 &1659614397
 Transform:

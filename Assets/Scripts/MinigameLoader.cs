@@ -59,7 +59,7 @@ public class MinigameLoader : MonoBehaviour
         SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
         loadedMinigameScene = SceneManager.GetSceneByName(sceneName);
 
-        SongManager.Instance.PlayMinigameSong();
+        SongManager.Instance?.PlayMinigameSong();
     }
 
     void UnloadMinigame()
@@ -73,7 +73,7 @@ public class MinigameLoader : MonoBehaviour
         SceneManager.UnloadSceneAsync(loadedMinigameScene);
         loadedMinigameScene = default(Scene);
 
-        SongManager.Instance.PlayMainSong();
+        SongManager.Instance?.PlayMainSong();
     }
 
 

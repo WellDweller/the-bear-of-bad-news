@@ -103,7 +103,7 @@ public class TextBubble : MonoBehaviour
         }
         SongManager.Instance?.PauseTyping();
 
-        if (delayBefore > 0f)
+        if (delayAfter > 0f)
             yield return new WaitForSeconds(delayAfter);
 
         isTyping = false;

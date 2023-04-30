@@ -82,14 +82,14 @@ public class TextBubble : MonoBehaviour
         if (delayBefore > 0f)
             yield return new WaitForSeconds(delayBefore);
 
-        SongManager.Instance.PlayTyping();
+        SongManager.Instance?.PlayTyping();
         for (int i = 0; i < text.Length; i++)
         {
             sb.Append(text[i]);
             textMesh.text = sb.ToString();
             yield return new WaitForSeconds(delayBetweenCharacters);
         }
-        SongManager.Instance.PauseTyping();
+        SongManager.Instance?.PauseTyping();
 
         if (delayBefore > 0f)
             yield return new WaitForSeconds(delayAfter);

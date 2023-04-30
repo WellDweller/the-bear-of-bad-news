@@ -45,7 +45,6 @@ public class SliderBar : Minigame
     [SerializeField] string response = "";
 
 
-
     void Start()
     {
         float frameWidth = SliderBarFrame.GetComponent<RectTransform>().rect.width;
@@ -69,6 +68,9 @@ public class SliderBar : Minigame
 
     void Update()
     {
+        if (!IsStarted || IsComplete)
+            return;
+
         if (timeElapsed < lerpDuration)
         {
             arrowX = Mathf.Lerp(startValue, endValue, timeElapsed / lerpDuration);
@@ -106,7 +108,7 @@ public class SliderBar : Minigame
         if (stage >= dialog.GetLength(0))
         {
             result.text = response;
-            EndGame();
+            CompleteGame();
             this.enabled = false;
             stage = 0;
             response = "";

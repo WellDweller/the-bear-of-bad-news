@@ -34,7 +34,11 @@ public class PatientChanger : MonoBehaviour
     {
         movedDistance = 0;
         nextPatient = Instantiate(currentPatient);
-        nextPatient.transform.position = currentPatient.transform.position + new Vector3(distanceBetweenPatients, 0, 0);
+
+        // account for paralax effect
+        var nextPatientOffset = distanceBetweenPatients * nextPatient.MoveSpeed;
+
+        nextPatient.transform.position = currentPatient.transform.position + new Vector3(nextPatientOffset, 0, 0);
 
         bear.Walk(0);
         hallway.StartMoving();

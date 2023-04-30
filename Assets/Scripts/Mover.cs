@@ -8,6 +8,8 @@ public class Mover : MonoBehaviour
 
     public bool IsMoving { get; private set; }
 
+    public float MoveSpeed => moveSpeed;
+
     [field:SerializeField] public UnityEvent OnStartMoving { get; private set; }
 
     [field:SerializeField] public UnityEvent OnStopMoving { get; private set; }

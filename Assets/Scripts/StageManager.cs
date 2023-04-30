@@ -8,7 +8,11 @@ public class StageManager : MonoBehaviour
 {
     [field:SerializeField] public UnityEvent OnSceneReady { get; private set; }
 
+    [field:SerializeField] public UnityEvent OnSceneComplete { get; private set; }
+
     [SerializeField] Mover bear;
+
+
 
     void Start()
     {
@@ -40,6 +44,38 @@ public class StageManager : MonoBehaviour
             bear.OnStopMoving.RemoveListener(handleStopMoving);
 
             OnSceneReady?.Invoke();
+        };
+        bear.OnStopMoving.AddListener(handleStopMoving);
+
+        bear.StartMoving();
+    }
+
+
+
+    public void Outro()
+    {
+        var camera = Camera.main;
+        var renderedHeight = 2 * camera.orthographicSize;
+
+        var ratio = camera.pixelHeight / renderedHeight;
+        var renderedWidth = camera.pixelWidth / ratio;
+
+        float trackedMovement = 0;
+
+        Action<float> handleMove = null;
+        handleMove = (float amount) => {
+            trackedMovement += amount;
+            if (trackedMovement >= renderedWidth)
+                bear.StopMoving();
+        };
+        bear.OnMove += handleMove;
+
+        UnityAction handleStopMoving = null;
+        handleStopMoving = () => {
+            bear.OnMove -= handleMove;
+            bear.OnStopMoving.RemoveListener(handleStopMoving);
+
+            OnSceneComplete?.Invoke();
         };
         bear.OnStopMoving.AddListener(handleStopMoving);
 

@@ -33,6 +33,7 @@ public class Conversation : MonoBehaviour
 
     public void GameOver()
     {
+        HideAll();
         gameOver = true;
     }
 

@@ -40,7 +40,7 @@ public class SliderBar : Minigame
 
     [SerializeField] int stage = 0;
 
-    [SerializeField] string[,] dialog = { { "i'm sorry, your", "ur", "ya" }, { "husband", "mate", "boi" }, { "passed away peacefully", "ate it", "ded" } };
+    // [SerializeField] string[,] dialog = { { "i'm sorry, your", "ur", "ya" }, { "husband", "mate", "boi" }, { "passed away peacefully", "ate it", "ded" } };
 
     [SerializeField] string response = "";
 
@@ -103,7 +103,7 @@ public class SliderBar : Minigame
         var percent = (x - minX) / (maxX - minX);
         
         // Reset
-        if (stage >= dialog.GetLength(0))
+        if (stage >= dialog.responses.Count)
         {
             result.text = response;
             EndGame();
@@ -116,19 +116,23 @@ public class SliderBar : Minigame
         string part = "";
         if (medicalFormBox.UnderlineRange.IsInRange(percent))
         {
+
             result.score += 2;
-            part = dialog[stage, 0];
+            // part = dialog[stage, 0];
+            part = dialog.responses["good"][stage];
             SongManager.Instance?.PlaySFX("success");
         }
         else if (medicalFormBox.HighlightRange.IsInRange(percent))
         {
             result.score += 1;
-            part = dialog[stage, 1];
+            // part = dialog[stage, 1];
+            part = dialog.responses["med"][stage];
             SongManager.Instance?.PlaySFX("medium");
         }
         else
         {
-            part = dialog[stage, 2];
+            // part = dialog[stage, 2];
+            part = dialog.responses["bad"][stage];
             SongManager.Instance?.PlaySFX("negative");
         }
 

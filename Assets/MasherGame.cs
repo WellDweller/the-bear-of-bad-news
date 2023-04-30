@@ -124,7 +124,7 @@ public class MasherGame : Minigame
         x = minX;
         medicalFormBox.HighlightRange = new MinMaxRange(.35f);
         medicalFormBox.UnderlineRange = new MinMaxRange(.15f);
-        degradeSpeed = Random.Range(30, 60);
+        degradeSpeed = Random.Range(25, 45);
     }
 
     void updateResponse(string s, int points)

@@ -22,6 +22,12 @@ public class TestMinigameScene : Minigame
 
     public void Speak()
     {
+        // They're mashing the button, they want to quit now
+        if (stage >= 3) {
+            EndGame(this.result);
+            return;
+        }
+
         // Pick a random response
         int idx = Random.Range(0, dialog[stage].Length);
         string text = dialog[stage][idx];
@@ -32,17 +38,17 @@ public class TestMinigameScene : Minigame
         bubs.Text = text;
         bubs.StartTyping();
 
-        // Check whether we're done and return
-        stage++;
-        if (stage >= 3)
+        // Check whether we're done and prepare the result text
+        if (stage == 2)
         {
             string joined = string.Join(" ", response);
-            EndGame(new MinigameResult { text = joined });
+            this.result = new MinigameResult { text = joined };
             this.enabled = false;
             stage = 0;
             response = new List<string>();
-            return;
         }
+
+        stage++;
     }
 
     void Update()

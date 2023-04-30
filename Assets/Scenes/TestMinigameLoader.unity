@@ -199,6 +199,7 @@ MonoBehaviour:
   minigameScenes:
   - WordBuilderMinigame
   - TestMinigameScene
+  - MasherMinigame
 --- !u!4 &114434913
 Transform:
   m_ObjectHideFlags: 0

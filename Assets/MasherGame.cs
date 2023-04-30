@@ -80,15 +80,16 @@ public class MasherGame : Minigame
         var percent = x / 100;
 
         string part = "";
+        int points = 0;
         if (medicalFormBox.UnderlineRange.IsInRange(percent))
         {
             part = dialog[stage, 0];
-            result.score += 2;
+            points = 2;
             SongManager.Instance?.PlaySFX("success");
         }
         else if (medicalFormBox.HighlightRange.IsInRange(percent))
         {
-            result.score += 1;
+            points = 1;
             part = dialog[stage, 1];
             SongManager.Instance?.PlaySFX("medium");
         }
@@ -99,7 +100,7 @@ public class MasherGame : Minigame
         }
 
         elapsedTime = 0;
-        updateResponse(part);
+        updateResponse(part, points);
         stage += 1;
 
         if (stage >= dialog.GetLength(0))
@@ -126,16 +127,22 @@ public class MasherGame : Minigame
         degradeSpeed = Random.Range(30, 60);
     }
 
-    void updateResponse(string s)
+    void updateResponse(string s, int points)
     {
         response = response + " " + s;
         result.text = response;
+        result.score += points;
 
         if (stage < textBubbles.Length)
         {
             var bubs = textBubbles[stage];
             bubs.Text = s;
-            bubs.StartTyping();
+            Color color = Color.white;
+            if (points == 2)
+                color = Color.green;
+            else if (points == 0)
+                color = Color.red;
+            bubs.StartTyping(color);
         }
     }
 

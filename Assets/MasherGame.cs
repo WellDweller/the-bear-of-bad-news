@@ -34,6 +34,7 @@ public class MasherGame : Minigame
     // Update is called once per frame
     void Update()
     {
+        if (!this.enabled) return;
         updateTimer();
 
         x -= Time.deltaTime * degradeSpeed;
@@ -99,17 +100,21 @@ public class MasherGame : Minigame
 
         elapsedTime = 0;
         updateResponse(part);
-        randomizeStage();
         stage += 1;
 
         if (stage >= dialog.GetLength(0))
         {
             result.text = response;
-            EndGame(result);
+            // EndGame(result);
             this.enabled = false;
             stage = 0;
             response = "";
             return;
+        }
+        else
+        {
+            randomizeStage();
+
         }
     }
 

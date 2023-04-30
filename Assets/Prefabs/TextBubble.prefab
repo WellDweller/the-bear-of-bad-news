@@ -211,6 +211,8 @@ MonoBehaviour:
   <OnDialogEnd>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
+  startVisible: 0
+  startTypingImmediately: 0
   delayBefore: 0
   delayBetweenCharacters: 0
   delayAfter: 0

@@ -14,6 +14,8 @@ public class PatientChanger : MonoBehaviour
     [SerializeField] Conversation conversationController;
 
 
+    Person activePerson;
+
     float movedDistance;
     Mover nextPatient;
 
@@ -22,6 +24,7 @@ public class PatientChanger : MonoBehaviour
     void Awake()
     {
         hallway.OnMove += TrackDistance;
+        activePerson = currentPatient.GetComponent<Person>();
     }
 
     void OnDestroy()
@@ -34,12 +37,10 @@ public class PatientChanger : MonoBehaviour
     {
         movedDistance = 0;
         nextPatient = Instantiate(currentPatient);
+        var distanceToMove = distanceBetweenPatients * currentPatient.MoveSpeed;
+        nextPatient.transform.position = currentPatient.transform.position + new Vector3(distanceToMove, 0, 0);
 
-        // account for paralax effect
-        var nextPatientOffset = distanceBetweenPatients * nextPatient.MoveSpeed;
-
-        nextPatient.transform.position = currentPatient.transform.position + new Vector3(nextPatientOffset, 0, 0);
-
+        activePerson.Weep();
         bear.Walk(0);
         hallway.StartMoving();
         currentPatient.StartMoving();
@@ -63,6 +64,9 @@ public class PatientChanger : MonoBehaviour
 
         Destroy(currentPatient.gameObject);
         currentPatient = nextPatient;
+        // not happy with how this is wired up, but we can't just wire this in the editor because the sad person object
+        // gets destroyed and replaced throughout the game
+        activePerson = nextPatient.GetComponent<Person>();
         nextPatient = null;
         OnStopMoving?.Invoke();
         bear.Idle(0);

@@ -41,5 +41,5 @@ if __name__ == "__main__":
 
         encounters["encounters"].append(encounter_obj)
 
-    with open("question-data.json", "w") as fh:
+    with open("../Assets/Resources/Dialog/encounters.dialog", "w") as fh:
         json.dump(encounters, fh, indent=4)

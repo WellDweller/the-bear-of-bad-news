@@ -8,6 +8,16 @@ public struct MinigameResult
     public string text;
 
     public int score;
+
+    public int stage;
+
+    public static MinigameResult operator +(MinigameResult a, MinigameResult b) {
+        return new() {
+            text = a.text + b.text,
+            score = a.score + b.score,
+            stage = a.stage > b.stage ? a.stage : b.stage,
+        };
+    }
 }
 
 
@@ -22,6 +32,8 @@ public class Minigame : MonoBehaviour
     [field:SerializeField] public UnityEvent<MinigameResult> OnEndGame { get; private set; }
 
     [field:SerializeField] public UnityEvent OnCompleteGame { get; private set; }
+
+    [field:SerializeField] public UnityEvent<MinigameResult> OnMinigameStageResult;
 
     protected MinigameResult result;
 
@@ -59,5 +71,12 @@ public class Minigame : MonoBehaviour
     public void EndGame(MinigameResult result)
     {
         OnEndGame?.Invoke(result);
+    }
+
+    protected void CompleteStage(int stage, string text, int points)
+    {
+        MinigameResult partial = new() { text = text, score = points, stage = stage };
+        OnMinigameStageResult?.Invoke(partial);
+        result += partial;
     }
 }

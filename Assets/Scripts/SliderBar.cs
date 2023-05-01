@@ -15,8 +15,6 @@ public class SliderBar : Minigame
     [SerializeField] GameObject SliderBarGood;
     [SerializeField] GameObject SliderBarMed;
 
-    [SerializeField] TextBubble[] textBubbles;
-
     private float minX;
     private float maxX;
 
@@ -135,53 +133,23 @@ public class SliderBar : Minigame
         {
             points = 2;
             part = dialog[stage, 0];
-            // part = dialog.responses["good"][stage];
-            SongManager.Instance?.PlaySFX("success");
         }
         else if (medicalFormBox.HighlightRange.IsInRange(percent))
         {
             points = 1;
             part = dialog[stage, 1];
-            // part = dialog.responses["med"][stage];
-            SongManager.Instance?.PlaySFX("medium");
         }
         else
         {
             part = dialog[stage, 2];
-            // part = dialog.responses["bad"][stage];
-            SongManager.Instance?.PlaySFX("negative");
         }
 
-        updateResponse(part, points);
+        CompleteStage(stage, part, points);
         // print(part);
         stage += 1;
         if (stage != dialog.GetLength(0))
         {
             randomizeStage();
-        }
-    }
-
-    void updateResponse(string s, int points)
-    {
-        response = response + " " + s;
-        result.text = response;
-        result.score += points;
-
-        if (stage < textBubbles.Length)
-        {
-            var bubs = textBubbles[stage];
-            bubs.Text = s;
-            Color color = Color.white;
-            if (points == 2)
-                // Green
-                color = new Color(150 / 255f, 200 / 255f, 100 / 255f);
-            else if (points == 1)
-                // Yellow
-                color = new Color(227 / 255f, 218 / 255f, 87 / 255f);
-            else if (points == 0)
-                // Red
-                color = new Color(250 / 255f, 130 / 255f, 110 / 255f);
-            bubs.StartTyping(color);
         }
     }
 }

@@ -85,22 +85,19 @@ public class MasherGame : Minigame
         {
             part = dialog[stage, 0];
             points = 2;
-            SongManager.Instance?.PlaySFX("success");
         }
         else if (medicalFormBox.HighlightRange.IsInRange(percent))
         {
             points = 1;
             part = dialog[stage, 1];
-            SongManager.Instance?.PlaySFX("medium");
         }
         else
         {
             part = dialog[stage, 2];
-            SongManager.Instance?.PlaySFX("negative");
         }
 
         elapsedTime = 0;
-        updateResponse(part, points);
+        CompleteStage(stage, part, points);
         stage += 1;
 
         if (stage >= dialog.GetLength(0))
@@ -125,30 +122,6 @@ public class MasherGame : Minigame
         medicalFormBox.HighlightRange = new MinMaxRange(.35f);
         medicalFormBox.UnderlineRange = new MinMaxRange(.15f);
         degradeSpeed = Random.Range(25, 45);
-    }
-
-    void updateResponse(string s, int points)
-    {
-        response = response + " " + s;
-        result.text = response;
-        result.score += points;
-
-        if (stage < textBubbles.Length)
-        {
-            var bubs = textBubbles[stage];
-            bubs.Text = s;
-            Color color = Color.white;
-            if (points == 2)
-                // Green
-                color = new Color(150 / 255f, 200 / 255f, 100 / 255f);
-            else if (points == 1)
-                // Yellow
-                color = new Color(227 / 255f, 218 / 255f, 87 / 255f);
-            else if (points == 0)
-                // Red
-                color = new Color(250 / 255f, 130 / 255f, 110 / 255f);
-            bubs.StartTyping(color);
-        }
     }
 
     public static float Remap(float value, float fromMin, float fromMax, float toMin, float toMax)

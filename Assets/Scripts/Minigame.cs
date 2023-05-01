@@ -55,8 +55,8 @@ public class Minigame : MonoBehaviour
 
     void Awake()
     {
-        OnMinigameLoaded?.Invoke(this);
         dialog = TEST_DIALOG;
+        OnMinigameLoaded?.Invoke(this);
     }
 
     void OnDestroy()

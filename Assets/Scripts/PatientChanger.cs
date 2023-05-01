@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -13,6 +14,9 @@ public class PatientChanger : MonoBehaviour
     [SerializeField] Bear bear;
     [SerializeField] Conversation conversationController;
 
+    [SerializeField] List<Mover> patientPrefabs;
+
+    int currentPatientIndex = 0;
 
     Person activePerson;
 
@@ -24,7 +28,12 @@ public class PatientChanger : MonoBehaviour
     void Awake()
     {
         hallway.OnMove += TrackDistance;
-        activePerson = currentPatient.GetComponent<Person>();
+        var firstPatient = InstaniateCurrentPrefab();
+        firstPatient.transform.position = currentPatient.transform.position;
+        Destroy(currentPatient.gameObject);
+        currentPatient = firstPatient;
+        activePerson = firstPatient.GetComponent<Person>();
+
     }
 
     void OnDestroy()
@@ -36,7 +45,9 @@ public class PatientChanger : MonoBehaviour
     public void GotoNextPatient()
     {
         movedDistance = 0;
-        nextPatient = Instantiate(currentPatient);
+        currentPatientIndex += 1;
+        currentPatientIndex %= patientPrefabs.Count;
+        nextPatient = InstaniateCurrentPrefab();
         var distanceToMove = distanceBetweenPatients * currentPatient.MoveSpeed;
         nextPatient.transform.position = currentPatient.transform.position + new Vector3(distanceToMove, 0, 0);
 
@@ -47,6 +58,12 @@ public class PatientChanger : MonoBehaviour
         nextPatient.StartMoving();
         conversationController.HideAll();
         OnStartMoving?.Invoke();
+    }
+
+    Mover InstaniateCurrentPrefab()
+    {
+        var nextPrefab = patientPrefabs[currentPatientIndex];
+        return Instantiate(nextPrefab);
     }
 
     void TrackDistance(float amount)

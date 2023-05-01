@@ -70,7 +70,7 @@ public class SliderBar : Minigame
         // medMin = 0 - medWidth / 2;
         // medMax = medWidth / 2;
 
-        lerpDuration = Random.Range(0.5f, 1.5f);
+        lerpDuration = Random.Range(0.3f, 1.2f);
 
         foreach (var box in medicalFormBoxes)
             randomizeStage(box);

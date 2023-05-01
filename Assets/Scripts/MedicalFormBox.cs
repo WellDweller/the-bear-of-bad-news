@@ -18,10 +18,10 @@ public struct MinMaxRange
         return val >= min && val <= max;
     }
 
-    public MinMaxRange(float size)
+    public MinMaxRange(float size, float minSize = 0f, float maxSize = 1f)
     {
         var halfSize = size / 2f;
-        var randomPosition = Random.Range(halfSize, 1f - halfSize);
+        var randomPosition = Random.Range(minSize + halfSize, maxSize - halfSize);
         min = randomPosition - halfSize;
         max = randomPosition + halfSize;
     }

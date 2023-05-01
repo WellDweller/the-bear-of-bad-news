@@ -113,8 +113,8 @@ public class MasherGame : Minigame
     void randomizeStage()
     {
         x = minX;
-        medicalFormBox.HighlightRange = new MinMaxRange(.35f);
-        medicalFormBox.UnderlineRange = new MinMaxRange(.15f);
+        medicalFormBox.HighlightRange = new MinMaxRange(.35f, .3f, 1f);
+        medicalFormBox.UnderlineRange = new MinMaxRange(.15f, .6f, .9f);
         degradeSpeed = Random.Range(25, 45);
     }
 

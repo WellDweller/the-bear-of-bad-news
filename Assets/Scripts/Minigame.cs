@@ -41,6 +41,9 @@ public class Minigame : MonoBehaviour
 
     protected bool IsComplete { get; private set; }
 
+    protected string[,] dialog { get; private set; }
+
+
 
     void Awake()
     {
@@ -51,6 +54,46 @@ public class Minigame : MonoBehaviour
     {
         OnMinigameUnloaded?.Invoke(this);
     }
+
+
+    public void ConfigureGame(EncounterRoundData data)
+    {
+        /*
+            data is like
+
+                good [round1, round2, round3]
+                med [round1, round2, round3]
+                bad [round1, round2, round3]
+            
+            and sometimes these have 4 rounds instead of three.
+
+            we want the data to be like
+
+                round1 [good, med, bad]
+                round2 [good, med, bad]
+                round3 [good, med, bad]
+
+            and to only ever have 3 rounds
+        */
+
+        string[,] gameData = new string[3, 3];
+        for (int i = 0; i < 3; i++)
+        {
+            gameData[i, 0] = data.responses.good[i];
+            gameData[i, 1] = data.responses.med[i];
+            gameData[i, 2] = data.responses.bad[i];
+        }
+
+        if (data.responses.good.Count > 3)
+            gameData[2, 0] += data.responses.good[3];
+        if (data.responses.med.Count > 3)
+            gameData[2, 1] += data.responses.good[3];
+        if (data.responses.bad.Count > 3)
+            gameData[2, 2] += data.responses.bad[3];
+
+        dialog = gameData;
+    }
+
 
     public void StartGame()
     {

@@ -9,7 +9,6 @@ public class Conversation : MonoBehaviour
     [field:SerializeField] public UnityEvent OnRoundEnd { get; private set; }
 
     [SerializeField] Dialog dialog;
-    private int currentEncounterIndex = 0;
 
     [Header("Text bubbles for questions")]
     [SerializeField] TextBubble patientQuestion;
@@ -18,6 +17,8 @@ public class Conversation : MonoBehaviour
     [Header("Other config")]
     [SerializeField] MinigameLoader loader;
 
+    int currentEncounterIndex = 0;
+    EncounterRoundData currentEncounterRound;
     int loops;
 
     int currentLoop; // It would be better to hook this into some global game state keeping track of encounters instead
@@ -34,13 +35,18 @@ public class Conversation : MonoBehaviour
 
     public void StartConversation()
     {
-        EncounterRoundData currentEncounter = GetCurrentEncounterRoundData();
+        currentEncounterRound = GetCurrentEncounterRoundData();
         patientQuestion.Reset();
         bearAnswer.Reset();
 
-        patientQuestion.Text = currentEncounter.question;
+        patientQuestion.Text = currentEncounterRound.question;
         patientQuestion.StartTyping();
         currentEncounterIndex += 1;
+    }
+
+    public void ConfigureMinigame(Minigame game)
+    {
+        game.ConfigureGame(currentEncounterRound);
     }
 
     public void GameOver()

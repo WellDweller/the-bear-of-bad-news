@@ -38,7 +38,7 @@ public class SliderBar : Minigame
 
     [SerializeField] int stage = 0;
 
-    [SerializeField] string[,] dialog = { { "i'm sorry, your", "ur", "ya" }, { "husband", "mate", "boi" }, { "passed away peacefully", "ate it", "ded" } };
+    // [SerializeField] string[,] dialog = { { "i'm sorry, your", "ur", "ya" }, { "husband", "mate", "boi" }, { "passed away peacefully", "ate it", "ded" } };
 
     [SerializeField] string response = "";
 

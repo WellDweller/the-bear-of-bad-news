@@ -10,7 +10,7 @@ public class TestMinigameScene : Minigame
 
     [SerializeField] int stage = 0;
 
-    [SerializeField] string[][] dialog = { new[] { "i'm sorry, your", "ur", "ya" }, new[] { "husband", "mate", "boi" }, new[] { "passed away peacefully", "ate it", "ded" } };
+    // [SerializeField] string[][] dialog = { new[] { "i'm sorry, your", "ur", "ya" }, new[] { "husband", "mate", "boi" }, new[] { "passed away peacefully", "ate it", "ded" } };
 
     [SerializeField] TMPro.TextMeshProUGUI[] buttonTextMeshes;
 
@@ -30,8 +30,8 @@ public class TestMinigameScene : Minigame
         }
 
         // Pick a random response
-        int idx = Random.Range(0, dialog[stage].Length);
-        string text = dialog[stage][idx];
+        int idx = Random.Range(0, dialog[0, stage].Length);
+        string text = dialog[stage, idx];
         int score = 2 - idx;
 
         CompleteStage(stage, text, score);

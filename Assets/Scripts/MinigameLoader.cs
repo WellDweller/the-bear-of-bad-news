@@ -26,7 +26,7 @@ public class MinigameLoader : MonoBehaviour
     Scene loadedMinigameScene;
     Minigame loadedMinigame;
 
-    
+
 
     void Awake()
     {

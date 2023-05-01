@@ -18,32 +18,33 @@ public class Conversation : MonoBehaviour
     [Header("Other config")]
     [SerializeField] MinigameLoader loader;
 
-    int currentEncounterIndex = 0;
+    // which person are we talking to
+    int encounterIndex = 0;
+    // which round of the conversation are we in
+    int roundIndex = 0;
+
+    EncounterData currentEncounter;
     EncounterRoundData currentEncounterRound;
-    int loops;
 
     int currentLoop; // It would be better to hook this into some global game state keeping track of encounters instead
     bool gameOver;
 
-    private void Start() {
-        loops = dialog.dialogData.encounters.Count();
+
+    void Awake()
+    {
+        SetupStateForNextRound();
     }
 
-    private EncounterRoundData GetCurrentEncounterRoundData()
-    {
-        return dialog.dialogData.encounters[currentLoop].encounterRounds[currentEncounterIndex];
-    } 
+
 
     public void StartConversation()
     {
-        currentEncounterRound = GetCurrentEncounterRoundData();
         patientQuestion.Reset();
         bearAnswer.Reset();
         patientResponse.Reset();
 
         patientQuestion.Text = currentEncounterRound.question;
         patientQuestion.StartTyping();
-        currentEncounterIndex += 1;
     }
 
     public void ConfigureMinigame(Minigame game)
@@ -58,16 +59,35 @@ public class Conversation : MonoBehaviour
 
     public void EndConversation()
     {
-        currentLoop += 1;
-        currentEncounterIndex = 0;
+        HideAll();
 
-        if (gameOver || currentLoop >= loops)
+        roundIndex += 1;
+
+        if (roundIndex >= currentEncounter.encounterRounds.Count)
         {
-            HideAll();
-            OnConversationEnd?.Invoke();
+            roundIndex = 0;
+            encounterIndex += 1;
+
+            if (encounterIndex >= dialog.dialogData.encounters.Count)
+            {
+                encounterIndex = 0;
+                // game over, go to bear;
+                OnConversationEnd?.Invoke();
+            }
+            else
+            {
+                // encounter over, walk to next encounter
+                SetupStateForNextRound();
+                OnRoundEnd?.Invoke();
+            }
         }
         else
-            OnRoundEnd?.Invoke();
+        {
+            SetupStateForNextRound();
+            StartConversation();
+            // round over, start next conversation with same person
+
+        }
     }
 
     public void HideAll()
@@ -75,5 +95,11 @@ public class Conversation : MonoBehaviour
         patientQuestion.Hide();
         bearAnswer.Hide();
         patientResponse.Hide();
+    }
+
+    void SetupStateForNextRound()
+    {
+        currentEncounter = dialog.dialogData.encounters[encounterIndex];
+        currentEncounterRound = currentEncounter.encounterRounds[roundIndex];
     }
 }

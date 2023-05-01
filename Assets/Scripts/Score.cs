@@ -45,12 +45,14 @@ public class Score : MonoBehaviour
     {
         Value = 0;
         textMesh.text = "0";
+        GlobalGameState.Score = 0;
     }
 
     void AddPoints(int points)
     {
         Value += points;
         textMesh.text = Value.ToString();
+        GlobalGameState.Score = Value;
         OnScore?.Invoke(new ScoreUpdate { scored = points, total = Value });
     }
 }

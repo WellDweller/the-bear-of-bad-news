@@ -18,7 +18,7 @@ public class Conversation : MonoBehaviour
     [Header("Other config")]
     [SerializeField] MinigameLoader loader;
 
-    [SerializeField, Min(1)] int loops;
+    int loops;
 
     int currentLoop; // It would be better to hook this into some global game state keeping track of encounters instead
     bool gameOver;

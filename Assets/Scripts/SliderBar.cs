@@ -42,7 +42,6 @@ public class SliderBar : Minigame
 
     [SerializeField] string response = "";
 
-
     void Start()
     {
         float frameWidth = SliderBarFrame.GetComponent<RectTransform>().rect.width;
@@ -69,12 +68,11 @@ public class SliderBar : Minigame
     {
         medicalFormBox.HighlightRange = new MinMaxRange(.35f);
         medicalFormBox.UnderlineRange = new MinMaxRange(.15f);
-        // direction = Random.value < 0.5f ? -1 : 1;
     }
 
     void Update()
     {
-        if (!IsStarted || IsComplete)
+        if (!IsPlaying)
             return;
 
         if (stage == dialog.GetLength(0))
@@ -145,11 +143,11 @@ public class SliderBar : Minigame
         }
 
         CompleteStage(stage, part, points);
+        randomizeStage();
+        
+        PauseForDuration(1f);
+
         // print(part);
         stage += 1;
-        if (stage != dialog.GetLength(0))
-        {
-            randomizeStage();
-        }
     }
 }

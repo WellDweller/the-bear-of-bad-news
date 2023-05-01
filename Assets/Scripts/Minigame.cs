@@ -1,6 +1,8 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+
 
 
 public struct MinigameResult
@@ -37,6 +39,8 @@ public class Minigame : MonoBehaviour
 
     [field:SerializeField] public UnityEvent<MinigameResult> OnMinigameStageResult;
 
+    public bool IsPlaying => IsStarted && !IsComplete && !IsPaused;
+
     protected MinigameResult result;
 
     protected bool IsStarted { get; private set; }
@@ -44,6 +48,8 @@ public class Minigame : MonoBehaviour
     protected bool IsComplete { get; private set; }
 
     protected string[,] dialog { get; private set; }
+
+    protected bool IsPaused { get; private set; }
 
 
 
@@ -119,10 +125,21 @@ public class Minigame : MonoBehaviour
         OnEndGame?.Invoke(result);
     }
 
+    public void PauseForDuration(float duration)
+    {
+        StartCoroutine(_PauseForDuration(duration));
+    }
     protected void CompleteStage(int stage, string text, int points)
     {
         MinigameResult partial = new() { text = text, score = points, stage = stage };
         OnMinigameStageResult?.Invoke(partial);
         result += partial;
+    }
+
+    IEnumerator _PauseForDuration(float duration)
+    {
+        IsPaused = true;
+        yield return new WaitForSeconds(duration);
+        IsPaused = false;
     }
 }

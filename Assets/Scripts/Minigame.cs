@@ -65,7 +65,7 @@ public class Minigame : MonoBehaviour
     }
 
 
-    public void ConfigureGame(EncounterRoundData data)
+    public void ConfigureGame(IEncounterRound data)
     {
         /*
             data is like
@@ -88,17 +88,17 @@ public class Minigame : MonoBehaviour
         string[,] gameData = new string[3, 3];
         for (int round = 0; round < 3; round++)
         {
-            gameData[round, 0] = round < data.responses.good.Count ? data.responses.good[round] : "...";
-            gameData[round, 1] = round < data.responses.med.Count ? data.responses.med[round] : "...";
-            gameData[round, 2] = round < data.responses.bad.Count ? data.responses.bad[round] : "...";
+            gameData[round, 0] = round < data.Responses.Good.Count ? data.Responses.Good[round] : "...";
+            gameData[round, 1] = round < data.Responses.Med.Count ? data.Responses.Med[round] : "...";
+            gameData[round, 2] = round < data.Responses.Bad.Count ? data.Responses.Bad[round] : "...";
         }
 
-        if (data.responses.good.Count > 3)
-            gameData[2, 0] += " " + data.responses.good[3];
-        if (data.responses.med.Count > 3)
-            gameData[2, 1] += " " + data.responses.med[3];
-        if (data.responses.bad.Count > 3)
-            gameData[2, 2] += " " + data.responses.bad[3];
+        if (data.Responses.Good.Count > 3)
+            gameData[2, 0] += " " + data.Responses.Good[3];
+        if (data.Responses.Med.Count > 3)
+            gameData[2, 1] += " " + data.Responses.Med[3];
+        if (data.Responses.Bad.Count > 3)
+            gameData[2, 2] += " " + data.Responses.Bad[3];
 
         dialog = gameData;
     }

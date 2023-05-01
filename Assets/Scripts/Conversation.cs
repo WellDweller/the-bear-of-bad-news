@@ -23,8 +23,8 @@ public class Conversation : MonoBehaviour
     // which round of the conversation are we in
     int roundIndex = 0;
 
-    EncounterData currentEncounter;
-    EncounterRoundData currentEncounterRound;
+    IEncounter currentEncounter;
+    IEncounterRound currentEncounterRound;
 
     int currentLoop; // It would be better to hook this into some global game state keeping track of encounters instead
     bool gameOver;
@@ -43,7 +43,7 @@ public class Conversation : MonoBehaviour
         bearAnswer.Reset();
         patientResponse.Reset();
 
-        patientQuestion.Text = currentEncounterRound.question;
+        patientQuestion.Text = currentEncounterRound.Question;
         patientQuestion.StartTyping();
     }
 
@@ -63,7 +63,7 @@ public class Conversation : MonoBehaviour
 
         roundIndex += 1;
 
-        if (roundIndex >= currentEncounter.encounterRounds.Count)
+        if (roundIndex >= currentEncounter.Rounds.Count)
         {
             roundIndex = 0;
             encounterIndex += 1;
@@ -100,6 +100,6 @@ public class Conversation : MonoBehaviour
     void SetupStateForNextRound()
     {
         currentEncounter = dialog.encounters[encounterIndex];
-        currentEncounterRound = currentEncounter.encounterRounds[roundIndex];
+        currentEncounterRound = currentEncounter.Rounds[roundIndex];
     }
 }

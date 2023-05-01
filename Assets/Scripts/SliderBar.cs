@@ -47,6 +47,12 @@ public class SliderBar : Minigame
 
     [SerializeField] string response = "";
 
+    [Header("Timer stuff")]
+    [SerializeField] RectTransform timerFill;
+    [SerializeField] RectTransform outerRect;
+    public float duration = 3f;
+    [SerializeField] float elapsedTime = 0f;
+
     void Start()
     {
         float frameWidth = SliderBarFrame.GetComponent<RectTransform>().rect.width;
@@ -64,7 +70,7 @@ public class SliderBar : Minigame
         // medMin = 0 - medWidth / 2;
         // medMax = medWidth / 2;
 
-        lerpDuration = Random.Range(0.5f, 1.5f);
+        lerpDuration = Random.Range(0.3f, 1.2f);
 
         foreach (var box in medicalFormBoxes)
             randomizeStage(box);
@@ -85,7 +91,7 @@ public class SliderBar : Minigame
         {
             return;
         }
-
+        updateTimer();
         if (timeElapsed < lerpDuration)
         {
             arrowX = Mathf.Lerp(startValue, endValue, timeElapsed / lerpDuration);
@@ -110,6 +116,20 @@ public class SliderBar : Minigame
         SliderArrowTransform.localPosition = new Vector3(arrowX, SliderArrowTransform.localPosition.y, SliderArrowTransform.localPosition.z);
 
         if (InputSystem.InputActions.UI.Submit.WasPerformedThisFrame())
+        {
+            evaluateArrow(arrowX);
+        }
+    }
+
+    void updateTimer()
+    {
+        var totalWidth = outerRect.rect.width;
+        elapsedTime += Time.deltaTime;
+        float lerpVal = Mathf.Clamp01(elapsedTime / duration);
+        float rightEdge = Mathf.Lerp(0f, totalWidth, lerpVal);
+        timerFill.offsetMax = new Vector2(-rightEdge, timerFill.offsetMax.y);
+
+        if (lerpVal == 1)
         {
             evaluateArrow(arrowX);
         }
@@ -150,6 +170,7 @@ public class SliderBar : Minigame
             part = dialog[stage, 2];
         }
 
+        elapsedTime = 0;
         CompleteStage(stage, part, points);
         PauseForDuration(1f);
         StartCoroutine(Scootch(1f));

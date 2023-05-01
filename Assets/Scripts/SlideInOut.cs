@@ -43,6 +43,11 @@ public class SlideInOut : MonoBehaviour
         StartCoroutine(DoTransition(targetPosition, outCurve, outTime, OnSlideOutComplete));
     }
 
+    public void Reset()
+    {
+        transform.localPosition = startPosition;
+    }
+
     IEnumerator DoTransition(Vector3 targetPosition, AnimationCurve animationCurve, float duration, UnityEvent unityAction)
     {
         Vector3 startPosition = transform.localPosition;

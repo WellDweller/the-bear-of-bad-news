@@ -1494,7 +1494,11 @@ MonoBehaviour:
   currentPatient: {fileID: 1064671642}
   bear: {fileID: 1798717132}
   conversationController: {fileID: 1031077658}
-  patientPrefabs: []
+  patientPrefabs:
+  - {fileID: 7582802655232521833, guid: 1b19e2aae0d054a23803568258dd41b8, type: 3}
+  - {fileID: -5116093272213279743, guid: 0eab5d6dddf8147c2a16073c9ac153f7, type: 3}
+  - {fileID: 4617951487800581989, guid: f90db4633f92a4f398cc167035ac3067, type: 3}
+  - {fileID: 1332176351881218110, guid: 464238165790a4f998d1555dfea4ee75, type: 3}
 --- !u!4 &1450771148
 Transform:
   m_ObjectHideFlags: 0
@@ -2023,9 +2027,13 @@ PrefabInstance:
       propertyPath: <OnLookAtClipboard>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 5125783325097719663, guid: db11d528ceca045a695b3d8342068d12, type: 3}
+      propertyPath: m_SortingOrder
+      value: -3
+      objectReference: {fileID: 0}
     - target: {fileID: 6376780739120616890, guid: db11d528ceca045a695b3d8342068d12, type: 3}
       propertyPath: m_SortingOrder
-      value: -1
+      value: -2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db11d528ceca045a695b3d8342068d12, type: 3}

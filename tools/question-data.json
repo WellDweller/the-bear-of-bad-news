@@ -5,159 +5,123 @@
             "encounterRounds": [
                 {
                     "question": "You asked to see me, doctor?",
-                    "responses": [
-                        {
-                            "good": [
-                                "Yes, thank you for coming.",
-                                "I am afraid ",
-                                "I have some bad news for you"
-                            ]
-                        },
-                        {
-                            "med": [
-                                "I did? Ah, yes.",
-                                "So, here's the thing,",
-                                "things aren't great"
-                            ]
-                        },
-                        {
-                            "bad": [
-                                "Sup.",
-                                "...",
-                                "shit's fucked"
-                            ]
-                        }
-                    ]
+                    "responses": {
+                        "good": [
+                            "Yes, thank you for coming.",
+                            "I am afraid ",
+                            "I have some bad news for you"
+                        ],
+                        "med": [
+                            "I did? Ah, yes.",
+                            "So, here's the thing,",
+                            "things aren't great"
+                        ],
+                        "bad": [
+                            "Sup.",
+                            "...",
+                            "shit's fucked"
+                        ]
+                    }
                 },
                 {
                     "question": "What is it?",
-                    "responses": [
-                        {
-                            "good": [
-                                "Your",
-                                "loving husband",
-                                "very regrettably",
-                                "passed away"
-                            ]
-                        },
-                        {
-                            "med": [
-                                "Ya",
-                                "mate",
-                                "has",
-                                "perished"
-                            ]
-                        },
-                        {
-                            "bad": [
-                                "ur",
-                                "boi",
-                                "done",
-                                "ate it"
-                            ]
-                        }
-                    ]
+                    "responses": {
+                        "good": [
+                            "Your",
+                            "loving husband",
+                            "very regrettably",
+                            "passed away"
+                        ],
+                        "med": [
+                            "Ya",
+                            "mate",
+                            "has",
+                            "perished"
+                        ],
+                        "bad": [
+                            "ur",
+                            "boi",
+                            "done",
+                            "ate it"
+                        ]
+                    }
                 },
                 {
                     "question": "What happened to him?",
-                    "responses": [
-                        {
-                            "good": [
-                                "He eventually",
-                                "succumbed to",
-                                "his sickness"
-                            ]
-                        },
-                        {
-                            "med": [
-                                "He",
-                                "was killed by",
-                                "the wending fingers of fate"
-                            ]
-                        },
-                        {
-                            "bad": [
-                                "ya boy",
-                                "got got by",
-                                "a blunder in the operating room"
-                            ]
-                        }
-                    ]
+                    "responses": {
+                        "good": [
+                            "He eventually",
+                            "succumbed to",
+                            "his sickness"
+                        ],
+                        "med": [
+                            "He",
+                            "was killed by",
+                            "the wending fingers of fate"
+                        ],
+                        "bad": [
+                            "ya boy",
+                            "got got by",
+                            "a blunder in the operating room"
+                        ]
+                    }
                 },
                 {
                     "question": "Did he suffer?",
-                    "responses": [
-                        {
-                            "good": [
-                                "No",
-                                "It was a peaceful death",
-                                "he looked relaxed"
-                            ]
-                        },
-                        {
-                            "med": [
-                                "Well...",
-                                "Sometimes it is better not knowing",
-                                "Personally, i closed my eyes when it happened"
-                            ]
-                        },
-                        {
-                            "bad": [
-                                "Yup",
-                                "ngl, it looked like it hurt",
-                                "He did not look good (aka he looked real bad)"
-                            ]
-                        }
-                    ]
+                    "responses": {
+                        "good": [
+                            "No",
+                            "It was a peaceful death",
+                            "he looked relaxed"
+                        ],
+                        "med": [
+                            "Well...",
+                            "Sometimes it is better not knowing",
+                            "Personally, i closed my eyes when it happened"
+                        ],
+                        "bad": [
+                            "4 defs.",
+                            "ngl, it looked like it hurt",
+                            "He did not look good (aka he looked real bad)"
+                        ]
+                    }
                 },
                 {
                     "question": "What should I do?",
-                    "responses": [
-                        {
-                            "good": [
-                                "In situations like these",
-                                "It's very normal to",
-                                "take time to heal"
-                            ]
-                        },
-                        {
-                            "med": [
-                                "Following a traumatic event",
-                                "you can",
-                                "not know what to feel"
-                            ]
-                        },
-                        {
-                            "bad": [
-                                "After a bad do",
-                                "u can",
-                                "get lit"
-                            ]
-                        }
-                    ]
+                    "responses": {
+                        "good": [
+                            "In situations like these",
+                            "It's very normal to",
+                            "take time to heal"
+                        ],
+                        "med": [
+                            "Following a traumatic event",
+                            "you can",
+                            "not know what to feel"
+                        ],
+                        "bad": [
+                            "After a bad do",
+                            "u can",
+                            "get lit"
+                        ]
+                    }
                 },
                 {
                     "question": "Thank you doctor",
-                    "responses": [
-                        {
-                            "good": [
-                                "You're welcome",
-                                "I wish you the best"
-                            ]
-                        },
-                        {
-                            "med": [
-                                "Okay",
-                                "Good luck"
-                            ]
-                        },
-                        {
-                            "bad": [
-                                "I Thank me too",
-                                "I'm a bear"
-                            ]
-                        }
-                    ]
+                    "responses": {
+                        "good": [
+                            "You're welcome",
+                            "I wish you the best"
+                        ],
+                        "med": [
+                            "Okay",
+                            "Good luck"
+                        ],
+                        "bad": [
+                            "I Thank me too",
+                            "I'm a bear"
+                        ]
+                    }
                 }
             ]
         },
@@ -166,107 +130,83 @@
             "encounterRounds": [
                 {
                     "question": "Hello Doctor, are there any updates on the results of my test?",
-                    "responses": [
-                        {
-                            "good": [
-                                "Ah, terribly sorry",
-                                "Could you please tell me your",
-                                "name? sorry"
-                            ]
-                        },
-                        {
-                            "med": [
-                                "Hmm",
-                                "what is ur",
-                                "name?"
-                            ]
-                        },
-                        {
-                            "bad": [
-                                "Who are u, lol?",
-                                "do ya got a",
-                                "name, friendo?"
-                            ]
-                        }
-                    ]
+                    "responses": {
+                        "good": [
+                            "Ah, terribly sorry",
+                            "Could you please tell me your",
+                            "name? sorry"
+                        ],
+                        "med": [
+                            "Hmm",
+                            "what is ur",
+                            "name?"
+                        ],
+                        "bad": [
+                            "Who are u, lol?",
+                            "do ya got a",
+                            "name, friendo?"
+                        ]
+                    }
                 },
                 {
                     "question": "It's Mark, I had the scans earlier today",
-                    "responses": [
-                        {
-                            "good": [
-                                "Of course! Mark.",
-                                "So the results of your scan",
-                                "are not trending positive, unfortunately"
-                            ]
-                        },
-                        {
-                            "med": [
-                                "Ah, okay.",
-                                "Your scan results",
-                                "are not great"
-                            ]
-                        },
-                        {
-                            "bad": [
-                                "Not ringing ne bells.",
-                                "ur scan results",
-                                "r bleak sauce"
-                            ]
-                        }
-                    ]
+                    "responses": {
+                        "good": [
+                            "Of course! Mark.",
+                            "So the results of your scan",
+                            "are not trending positive, unfortunately"
+                        ],
+                        "med": [
+                            "Ah, okay.",
+                            "Your scan results",
+                            "are not great"
+                        ],
+                        "bad": [
+                            "Not ringing ne bells.",
+                            "ur scan results",
+                            "r bleak sauce"
+                        ]
+                    }
                 },
                 {
                     "question": "That sounds bad, whats the diagnosis?",
-                    "responses": [
-                        {
-                            "good": [
-                                "I'm afraid that",
-                                "your condition is so advanced that it",
-                                "is fatal. I'm sorry."
-                            ]
-                        },
-                        {
-                            "med": [
-                                "For most people",
-                                "your sickness",
-                                "is a killer"
-                            ]
-                        },
-                        {
-                            "bad": [
-                                "4 u m8",
-                                "ur shit",
-                                "is gonna get u ded real quick"
-                            ]
-                        }
-                    ]
+                    "responses": {
+                        "good": [
+                            "I'm afraid that",
+                            "your condition is so advanced that it",
+                            "is fatal. I'm sorry."
+                        ],
+                        "med": [
+                            "For most people",
+                            "your sickness",
+                            "is a killer"
+                        ],
+                        "bad": [
+                            "4 u m8",
+                            "ur shit",
+                            "is gonna get u ded real quick"
+                        ]
+                    }
                 },
                 {
                     "question": "What should I do?",
-                    "responses": [
-                        {
-                            "good": [
-                                "I am afraid there is no cure",
-                                "I know this must be hard",
-                                "You have my condolences"
-                            ]
-                        },
-                        {
-                            "med": [
-                                "It is terminal",
-                                "This isn't easy",
-                                "We'll talk later"
-                            ]
-                        },
-                        {
-                            "bad": [
-                                "lol, nothing",
-                                "sucks to be u",
-                                "cya!"
-                            ]
-                        }
-                    ]
+                    "responses": {
+                        "good": [
+                            "I am afraid there is no cure",
+                            "I know this must be hard",
+                            "You have my condolences"
+                        ],
+                        "med": [
+                            "It is terminal",
+                            "This isn't easy",
+                            "We'll talk later"
+                        ],
+                        "bad": [
+                            "lol, nothing",
+                            "sucks to be u",
+                            "cya!"
+                        ]
+                    }
                 }
             ]
         },
@@ -275,162 +215,126 @@
             "encounterRounds": [
                 {
                     "question": "Doctor! Glad I caught you, I wanted to have a word",
-                    "responses": [
-                        {
-                            "good": [
-                                "My esteemed colleague, hello.",
-                                "What seems to be",
-                                "bothering you?"
-                            ]
-                        },
-                        {
-                            "med": [
-                                "You sure caught me.",
-                                "what's",
-                                "the problem? im busy."
-                            ]
-                        },
-                        {
-                            "bad": [
-                                "**fucking craig**",
-                                "something",
-                                "wrong with you?"
-                            ]
-                        }
-                    ]
+                    "responses": {
+                        "good": [
+                            "My esteemed colleague, hello.",
+                            "What seems to be",
+                            "bothering you?"
+                        ],
+                        "med": [
+                            "You sure caught me.",
+                            "what's",
+                            "the problem? im busy."
+                        ],
+                        "bad": [
+                            "**fucking craig**",
+                            "something",
+                            "wrong with you?"
+                        ]
+                    }
                 },
                 {
                     "question": "Its about the surgery you performed in room 3A",
-                    "responses": [
-                        {
-                            "good": [
-                                "Ah yes, of course",
-                                "what",
-                                "about it?"
-                            ]
-                        },
-                        {
-                            "med": [
-                                "okay",
-                                "and what",
-                                "specifically?"
-                            ]
-                        },
-                        {
-                            "bad": [
-                                "lol",
-                                "wot",
-                                "r u on about"
-                            ]
-                        }
-                    ]
+                    "responses": {
+                        "good": [
+                            "Ah yes, of course",
+                            "what",
+                            "about it?"
+                        ],
+                        "med": [
+                            "okay",
+                            "and what",
+                            "specifically?"
+                        ],
+                        "bad": [
+                            "lol",
+                            "wot",
+                            "r u on about"
+                        ]
+                    }
                 },
                 {
                     "question": "Well, there was blood everywhere in there...",
-                    "responses": [
-                        {
-                            "good": [
-                                "The prodcedure may have",
-                                "gone ever so slightly",
-                                "awry."
-                            ]
-                        },
-                        {
-                            "med": [
-                                "Things may have",
-                                "gone",
-                                "sideways."
-                            ]
-                        },
-                        {
-                            "bad": [
-                                "Shit ",
-                                "got",
-                                "f'ed, ya feel me?"
-                            ]
-                        }
-                    ]
+                    "responses": {
+                        "good": [
+                            "The prodcedure may have",
+                            "gone ever so slightly",
+                            "awry."
+                        ],
+                        "med": [
+                            "Things may have",
+                            "gone",
+                            "sideways."
+                        ],
+                        "bad": [
+                            "Shit ",
+                            "got",
+                            "f'ed, ya feel me?"
+                        ]
+                    }
                 },
                 {
                     "question": "What do you mean?",
-                    "responses": [
-                        {
-                            "good": [
-                                "Well, the patient",
-                                "wasn't",
-                                "sufficently anethetized",
-                                "and became responsive"
-                            ]
-                        },
-                        {
-                            "med": [
-                                "the subject",
-                                "had not been",
-                                "properly sedated",
-                                "and woke up"
-                            ]
-                        },
-                        {
-                            "bad": [
-                                "The little shit",
-                                "ain't been",
-                                "juiced proper",
-                                "and popped off"
-                            ]
-                        }
-                    ]
+                    "responses": {
+                        "good": [
+                            "Well, the patient",
+                            "wasn't",
+                            "sufficently anethetized",
+                            "and became responsive"
+                        ],
+                        "med": [
+                            "the subject",
+                            "had not been",
+                            "properly sedated",
+                            "and woke up"
+                        ],
+                        "bad": [
+                            "The little shit",
+                            "ain't been",
+                            "juiced proper",
+                            "and popped off"
+                        ]
+                    }
                 },
                 {
                     "question": "And then what happened?",
-                    "responses": [
-                        {
-                            "good": [
-                                "Unfortunately, he",
-                                "didn't make it",
-                                "Sorry to say"
-                            ]
-                        },
-                        {
-                            "med": [
-                                "He",
-                                "died",
-                                "sadly"
-                            ]
-                        },
-                        {
-                            "bad": [
-                                "lol, he",
-                                "rip",
-                                ":'-("
-                            ]
-                        }
-                    ]
+                    "responses": {
+                        "good": [
+                            "Unfortunately, he",
+                            "didn't make it",
+                            "Sorry to say"
+                        ],
+                        "med": [
+                            "He",
+                            "died",
+                            "sadly"
+                        ],
+                        "bad": [
+                            "lol, he",
+                            "rip",
+                            ":'-("
+                        ]
+                    }
                 },
                 {
                     "question": "I am going to report this to the ethics board",
-                    "responses": [
-                        {
-                            "good": [
-                                "Good sir,",
-                                "I must protest your assessment.",
-                                "I have patients to attend to"
-                            ]
-                        },
-                        {
-                            "med": [
-                                "But...",
-                                "I disagree entirely.",
-                                "im out of here"
-                            ]
-                        },
-                        {
-                            "bad": [
-                                "Fuck off dude",
-                                "U an idiot",
-                                "See u in hell craig"
-                            ]
-                        }
-                    ]
+                    "responses": {
+                        "good": [
+                            "Good sir,",
+                            "I must protest your assessment.",
+                            "I have patients to attend to"
+                        ],
+                        "med": [
+                            "But...",
+                            "I disagree entirely.",
+                            "im out of here"
+                        ],
+                        "bad": [
+                            "Fuck off dude",
+                            "U an idiot",
+                            "See u in hell craig"
+                        ]
+                    }
                 }
             ]
         },
@@ -439,104 +343,80 @@
             "encounterRounds": [
                 {
                     "question": "Ah, Doctor. I am glad I caught you.",
-                    "responses": [
-                        {
-                            "good": [
-                                "Dr. Ellis, so good to see you.",
-                                "What is it you",
-                                "have you on your mind?"
-                            ]
-                        },
-                        {
-                            "med": [
-                                "Bonjour Doctor",
-                                "What do you",
-                                "need from me?"
-                            ]
-                        },
-                        {
-                            "bad": [
-                                "Sup",
-                                "Wat u",
-                                "want?"
-                            ]
-                        }
-                    ]
+                    "responses": {
+                        "good": [
+                            "Dr. Ellis, so good to see you.",
+                            "What is it you",
+                            "have you on your mind?"
+                        ],
+                        "med": [
+                            "Bonjour Doctor",
+                            "What do you",
+                            "need from me?"
+                        ],
+                        "bad": [
+                            "Sup",
+                            "Wat u",
+                            "want?"
+                        ]
+                    }
                 },
                 {
                     "question": "I hear you're communicating incredibly well, despite being a bear",
-                    "responses": [
-                        {
-                            "good": [
-                                "Why thank you",
-                                "I do feel like I am",
-                                "providing a valuable service"
-                            ]
-                        },
-                        {
-                            "med": [
-                                "thx",
-                                "I am",
-                                "performing adequately"
-                            ]
-                        },
-                        {
-                            "bad": [
-                                "whatevs",
-                                "am defs",
-                                "totally winging it, lol"
-                            ]
-                        }
-                    ]
+                    "responses": {
+                        "good": [
+                            "Why thank you",
+                            "I do feel like I am",
+                            "providing a valuable service"
+                        ],
+                        "med": [
+                            "thx",
+                            "I am",
+                            "performing adequately"
+                        ],
+                        "bad": [
+                            "whatevs",
+                            "am defs",
+                            "totally winging it, lol"
+                        ]
+                    }
                 },
                 {
                     "question": "I wanted to let you know you're being promoted immediately",
-                    "responses": [
-                        {
-                            "good": [
-                                "This truly is",
-                                "an honor",
-                                "thank you, Dr Ellis"
-                            ]
-                        },
-                        {
-                            "med": [
-                                "What",
-                                "a surprise",
-                                "ty, doc"
-                            ]
-                        },
-                        {
-                            "bad": [
-                                "wut",
-                                "a travesty",
-                                "u moron"
-                            ]
-                        }
-                    ]
+                    "responses": {
+                        "good": [
+                            "This truly is",
+                            "an honor",
+                            "thank you, Dr Ellis"
+                        ],
+                        "med": [
+                            "What",
+                            "a surprise",
+                            "ty, doc"
+                        ],
+                        "bad": [
+                            "wut",
+                            "a travesty",
+                            "u moron"
+                        ]
+                    }
                 },
                 {
                     "question": "Good day Doctor. And congratulations.",
-                    "responses": [
-                        {
-                            "good": [
-                                "One thousand thank yous",
-                                "Dr Ellis"
-                            ]
-                        },
-                        {
-                            "med": [
-                                "Anytime",
-                                "buddy"
-                            ]
-                        },
-                        {
-                            "bad": [
-                                "Get fucked",
-                                "fucko"
-                            ]
-                        }
-                    ]
+                    "responses": {
+                        "good": [
+                            "One thousand thank yous",
+                            "Dr Ellis"
+                        ],
+                        "med": [
+                            "Anytime",
+                            "buddy"
+                        ],
+                        "bad": [
+                            "Get fucked",
+                            "fucko"
+                        ]
+                    }
                 }
             ]
         },
@@ -545,104 +425,80 @@
             "encounterRounds": [
                 {
                     "question": "Ah, Doctor. I am glad I caught you.",
-                    "responses": [
-                        {
-                            "good": [
-                                "Dr. Ellis, so good to see you.",
-                                "What is it you",
-                                "have you on your mind?"
-                            ]
-                        },
-                        {
-                            "med": [
-                                "Bonjour Doctor",
-                                "What do you",
-                                "need from me?"
-                            ]
-                        },
-                        {
-                            "bad": [
-                                "Sup",
-                                "Wat u",
-                                "want?"
-                            ]
-                        }
-                    ]
+                    "responses": {
+                        "good": [
+                            "Dr. Ellis, so good to see you.",
+                            "What is it you",
+                            "have you on your mind?"
+                        ],
+                        "med": [
+                            "Bonjour Doctor",
+                            "What do you",
+                            "need from me?"
+                        ],
+                        "bad": [
+                            "Sup",
+                            "Wat u",
+                            "want?"
+                        ]
+                    }
                 },
                 {
                     "question": "It appears you're struggling a bit here, maybe because you're a bear",
-                    "responses": [
-                        {
-                            "good": [
-                                "Ah yes",
-                                "it has been hard",
-                                "to fit in"
-                            ]
-                        },
-                        {
-                            "med": [
-                                "Not sure I agree",
-                                "its been a challenge",
-                                "to feel accepted by others"
-                            ]
-                        },
-                        {
-                            "bad": [
-                                "lol, no way loser",
-                                "its ez",
-                                "to panda (lol) to these cretins"
-                            ]
-                        }
-                    ]
+                    "responses": {
+                        "good": [
+                            "Ah yes",
+                            "it has been hard",
+                            "to fit in"
+                        ],
+                        "med": [
+                            "Not sure I agree",
+                            "its been a challenge",
+                            "to feel accepted by others"
+                        ],
+                        "bad": [
+                            "lol, no way loser",
+                            "its ez",
+                            "to panda (lol) to these cretins"
+                        ]
+                    }
                 },
                 {
                     "question": "You're being referred to a course to work on your communication skills",
-                    "responses": [
-                        {
-                            "good": [
-                                "Ah, I completely understand",
-                                "I concur with whatever you",
-                                "advise in this situation"
-                            ]
-                        },
-                        {
-                            "med": [
-                                "okay doctor",
-                                "whatever you",
-                                "think is best"
-                            ]
-                        },
-                        {
-                            "bad": [
-                                "pfft",
-                                "watevs u",
-                                "want, idc tbh"
-                            ]
-                        }
-                    ]
+                    "responses": {
+                        "good": [
+                            "Ah, I completely understand",
+                            "I concur with whatever you",
+                            "advise in this situation"
+                        ],
+                        "med": [
+                            "okay doctor",
+                            "whatever you",
+                            "think is best"
+                        ],
+                        "bad": [
+                            "pfft",
+                            "watevs u",
+                            "want, idc tbh"
+                        ]
+                    }
                 },
                 {
                     "question": "Good day Doctor.",
-                    "responses": [
-                        {
-                            "good": [
-                                "I appreciate your candor",
-                                "Dr Ellis"
-                            ]
-                        },
-                        {
-                            "med": [
-                                "Anytime",
-                                "buddy"
-                            ]
-                        },
-                        {
-                            "bad": [
-                                "Get fucked",
-                                "fucko"
-                            ]
-                        }
-                    ]
+                    "responses": {
+                        "good": [
+                            "I appreciate your candor",
+                            "Dr Ellis"
+                        ],
+                        "med": [
+                            "Anytime",
+                            "buddy"
+                        ],
+                        "bad": [
+                            "Get fucked",
+                            "fucko"
+                        ]
+                    }
                 }
             ]
         },
@@ -651,104 +507,80 @@
             "encounterRounds": [
                 {
                     "question": "Ah, Doctor. I am glad I caught you.",
-                    "responses": [
-                        {
-                            "good": [
-                                "Dr. Ellis, so good to see you.",
-                                "What is it you",
-                                "have you on your mind?"
-                            ]
-                        },
-                        {
-                            "med": [
-                                "Bonjour Doctor",
-                                "What do you",
-                                "need from me?"
-                            ]
-                        },
-                        {
-                            "bad": [
-                                "Sup",
-                                "Wat u",
-                                "want?"
-                            ]
-                        }
-                    ]
+                    "responses": {
+                        "good": [
+                            "Dr. Ellis, so good to see you.",
+                            "What is it you",
+                            "have you on your mind?"
+                        ],
+                        "med": [
+                            "Bonjour Doctor",
+                            "What do you",
+                            "need from me?"
+                        ],
+                        "bad": [
+                            "Sup",
+                            "Wat u",
+                            "want?"
+                        ]
+                    }
                 },
                 {
                     "question": "I've heard negative reports about your unconventional communication style",
-                    "responses": [
-                        {
-                            "good": [
-                                "im so sorry, could you tell me who",
-                                "told you these mistruths?",
-                                "its true i have an unorthodox approach to communication"
-                            ]
-                        },
-                        {
-                            "med": [
-                                "haha, i wonder who",
-                                "told you this?",
-                                "i am a bear after all"
-                            ]
-                        },
-                        {
-                            "bad": [
-                                "some narcs",
-                                "ratted me out?",
-                                "i tell it like it is, u dummy"
-                            ]
-                        }
-                    ]
+                    "responses": {
+                        "good": [
+                            "im so sorry, could you tell me who",
+                            "told you these mistruths?",
+                            "its true i have an unorthodox approach to communication"
+                        ],
+                        "med": [
+                            "haha, i wonder who",
+                            "told you this?",
+                            "i am a bear after all"
+                        ],
+                        "bad": [
+                            "some narcs",
+                            "ratted me out?",
+                            "i tell it like it is, u dummy"
+                        ]
+                    }
                 },
                 {
                     "question": "Due to this we're going to have to fire you, effective immediately",
-                    "responses": [
-                        {
-                            "good": [
-                                "I understand your hands are tied",
-                                "due to my",
-                                "verbal flourishes and penchant for exaggeration"
-                            ]
-                        },
-                        {
-                            "med": [
-                                "hmm, and this is",
-                                "because of my",
-                                "uncommon method of communication"
-                            ]
-                        },
-                        {
-                            "bad": [
-                                "fk u m8, all this",
-                                "cuz u can't handle my",
-                                "truth bombz"
-                            ]
-                        }
-                    ]
+                    "responses": {
+                        "good": [
+                            "I understand your hands are tied",
+                            "due to my",
+                            "verbal flourishes and penchant for exaggeration"
+                        ],
+                        "med": [
+                            "hmm, and this is",
+                            "because of my",
+                            "uncommon method of communication"
+                        ],
+                        "bad": [
+                            "fk u m8, all this",
+                            "cuz u can't handle my",
+                            "truth bombz"
+                        ]
+                    }
                 },
                 {
                     "question": "Please leave the premises",
-                    "responses": [
-                        {
-                            "good": [
-                                "I appreciate your direct feedback",
-                                "Dr Ellis"
-                            ]
-                        },
-                        {
-                            "med": [
-                                "Okay",
-                                "buddy"
-                            ]
-                        },
-                        {
-                            "bad": [
-                                "Get fucked",
-                                "fucko"
-                            ]
-                        }
-                    ]
+                    "responses": {
+                        "good": [
+                            "I appreciate your direct feedback",
+                            "Dr Ellis"
+                        ],
+                        "med": [
+                            "Okay",
+                            "buddy"
+                        ],
+                        "bad": [
+                            "Get fucked",
+                            "fucko"
+                        ]
+                    }
                 }
             ]
         }

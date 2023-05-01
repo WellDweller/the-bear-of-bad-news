@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
-
+#if UNITY_EDITOR
 [UnityEditor.AssetImporters.ScriptedImporter(1, "dialog")]
 public class JSONImporter : UnityEditor.AssetImporters.ScriptedImporter
 {
@@ -28,3 +28,4 @@ public class JSONImporter : UnityEditor.AssetImporters.ScriptedImporter
         ctx.SetMainObject(dialogAsset);
     }
 }
+#endif

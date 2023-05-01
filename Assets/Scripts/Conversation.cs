@@ -13,6 +13,7 @@ public class Conversation : MonoBehaviour
     [Header("Text bubbles for questions")]
     [SerializeField] TextBubble patientQuestion;
     [SerializeField] TextBubble bearAnswer;
+    [SerializeField] TextBubble patientResponse;
 
     [Header("Other config")]
     [SerializeField] MinigameLoader loader;
@@ -38,6 +39,7 @@ public class Conversation : MonoBehaviour
         currentEncounterRound = GetCurrentEncounterRoundData();
         patientQuestion.Reset();
         bearAnswer.Reset();
+        patientResponse.Reset();
 
         patientQuestion.Text = currentEncounterRound.question;
         patientQuestion.StartTyping();
@@ -72,5 +74,6 @@ public class Conversation : MonoBehaviour
     {
         patientQuestion.Hide();
         bearAnswer.Hide();
+        patientResponse.Hide();
     }
 }

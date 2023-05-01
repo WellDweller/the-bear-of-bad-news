@@ -1713,7 +1713,19 @@ MonoBehaviour:
       m_Calls: []
   <OnDamage>k__BackingField:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2012112442}
+        m_TargetAssemblyTypeName: Shaker, Assembly-CSharp
+        m_MethodName: Shake
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   emptyHit: {fileID: 5664483451578679043, guid: 6b9219797a8174864b2a0001ae75da06, type: 3}
   filledHit: {fileID: -4394550686366766550, guid: 6b9219797a8174864b2a0001ae75da06, type: 3}
   maxHealth: 3
@@ -2420,6 +2432,58 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2012112437 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 177492299236097375, guid: 361ef14db68534695b218c1ff3419564, type: 3}
+  m_PrefabInstance: {fileID: 299104137}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2012112442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012112437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d2c4853cadd8483a9f84eeda34c4175, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0.16121328
+      outSlope: 0.16121328
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.17555556
+    - serializedVersion: 3
+      time: 0.5
+      value: 1
+      inSlope: -0.084905826
+      outSlope: -0.084905826
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.111111164
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -0.42990202
+      outSlope: -0.42990202
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.17555559
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  shakeDuration: 0.2
+  shakeIntensity: 0.1
 --- !u!1001 &5481406668134071058
 PrefabInstance:
   m_ObjectHideFlags: 0

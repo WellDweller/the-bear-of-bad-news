@@ -918,7 +918,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1704078308446295467, guid: a6420a6a41a5b4911bbde1024ea6214d, type: 3}
       propertyPath: delayBetweenCharacters
-      value: 0.1
+      value: 0.033
       objectReference: {fileID: 0}
     - target: {fileID: 1704078308446295467, guid: a6420a6a41a5b4911bbde1024ea6214d, type: 3}
       propertyPath: <OnDialogEnd>k__BackingField.m_PersistentCalls.m_Calls.Array.size

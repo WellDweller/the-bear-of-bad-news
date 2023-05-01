@@ -10,6 +10,11 @@ public class SliderBar : Minigame
 {
     [SerializeField] MedicalFormBox medicalFormBox;
 
+    [SerializeField] List<MedicalFormBox> medicalFormBoxes;
+    [SerializeField] float yOffsetBetweenBoxes = 40;
+    [SerializeField] Transform transformToScootch;
+    [SerializeField] AnimationCurve scootchCurve;
+
     [SerializeField] GameObject SliderBarFrame;
     [SerializeField] GameObject SliderBarArrow;
     [SerializeField] GameObject SliderBarGood;
@@ -61,13 +66,14 @@ public class SliderBar : Minigame
 
         lerpDuration = Random.Range(0.5f, 1.5f);
 
-        randomizeStage();
+        foreach (var box in medicalFormBoxes)
+            randomizeStage(box);
     }
 
-    void randomizeStage()
+    void randomizeStage(MedicalFormBox box)
     {
-        medicalFormBox.HighlightRange = new MinMaxRange(.35f);
-        medicalFormBox.UnderlineRange = new MinMaxRange(.15f);
+        box.HighlightRange = new MinMaxRange(.35f);
+        box.UnderlineRange = new MinMaxRange(.15f);
     }
 
     void Update()
@@ -127,12 +133,14 @@ public class SliderBar : Minigame
         string part = "";
         int points = 0;
 
-        if (medicalFormBox.UnderlineRange.IsInRange(percent))
+        var targetBox = medicalFormBoxes[stage];
+
+        if (targetBox.UnderlineRange.IsInRange(percent))
         {
             points = 2;
             part = dialog[stage, 0];
         }
-        else if (medicalFormBox.HighlightRange.IsInRange(percent))
+        else if (targetBox.HighlightRange.IsInRange(percent))
         {
             points = 1;
             part = dialog[stage, 1];
@@ -143,11 +151,28 @@ public class SliderBar : Minigame
         }
 
         CompleteStage(stage, part, points);
-        randomizeStage();
-        
         PauseForDuration(1f);
+        StartCoroutine(Scootch(1f));
 
         // print(part);
         stage += 1;
+    }
+
+    IEnumerator Scootch(float duration)
+    {
+        var startTime = Time.time;
+        var startPosition = transformToScootch.localPosition;
+        var targetPosition = startPosition + new Vector3(0, yOffsetBetweenBoxes, 0);
+        float progress = 0;
+
+        while (progress < 1f)
+        {
+            var lerpValue = scootchCurve.Evaluate(progress);
+            transformToScootch.localPosition = Vector3.Lerp(startPosition, targetPosition, lerpValue);
+            yield return null;
+            progress = (Time.time - startTime) / duration;
+        }
+
+        transformToScootch.localPosition = targetPosition;
     }
 }

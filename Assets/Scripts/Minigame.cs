@@ -88,9 +88,9 @@ public class Minigame : MonoBehaviour
         string[,] gameData = new string[3, 3];
         for (int round = 0; round < 3; round++)
         {
-            gameData[round, 0] = data.responses.good[round];
-            gameData[round, 1] = data.responses.med[round];
-            gameData[round, 2] = data.responses.bad[round];
+            gameData[round, 0] = round < data.responses.good.Count ? data.responses.good[round] : "...";
+            gameData[round, 1] = round < data.responses.med.Count ? data.responses.med[round] : "...";
+            gameData[round, 2] = round < data.responses.bad.Count ? data.responses.bad[round] : "...";
         }
 
         if (data.responses.good.Count > 3)

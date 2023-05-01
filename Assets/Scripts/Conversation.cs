@@ -87,7 +87,7 @@ public class Conversation : MonoBehaviour
                 else 
                 {
                     SetFinalEncounter(healthComponent.CurrentHealth);
-                    Destroy(healthComponent);
+                    Destroy(healthComponent.gameObject);
                     OnRoundEnd?.Invoke();
                 }
             }

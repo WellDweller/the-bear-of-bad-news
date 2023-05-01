@@ -98,6 +98,8 @@ public class MasherGame : Minigame
 
         elapsedTime = 0;
         CompleteStage(stage, part, points);
+        randomizeStage();
+        PauseForDuration(1f);
         stage += 1;
 
         if (stage >= dialog.GetLength(0))
@@ -107,11 +109,6 @@ public class MasherGame : Minigame
             stage = 0;
             response = "";
             return;
-        }
-        else
-        {
-            randomizeStage();
-
         }
     }
 

@@ -22,10 +22,13 @@ public class TestMinigameScene : Minigame
 
     public void Speak()
     {
+        if (!IsPlaying)
+            return;
+
         // They're mashing the button, they want to quit now
         if (stage >= 3)
         {
-            EndGame(this.result);
+            CompleteGame();
             return;
         }
 
@@ -35,15 +38,8 @@ public class TestMinigameScene : Minigame
         int score = 2 - idx;
 
         CompleteStage(stage, text, score);
-
-        // Check whether we're done and prepare the result text
-        if (stage == dialog.GetLength(0) - 1)
-        {
-            this.enabled = false;
-            stage = 0;
-        }
-
         randomizeButtonText();
+        PauseForDuration(.5f);
 
         stage++;
     }

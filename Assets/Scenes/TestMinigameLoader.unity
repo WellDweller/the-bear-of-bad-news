@@ -331,7 +331,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8038106010238397316, guid: a6420a6a41a5b4911bbde1024ea6214d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 22.7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8038106010238397316, guid: a6420a6a41a5b4911bbde1024ea6214d, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -872,7 +872,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8038106010238397316, guid: a6420a6a41a5b4911bbde1024ea6214d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 22.7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8038106010238397316, guid: a6420a6a41a5b4911bbde1024ea6214d, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1073,7 +1073,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  dialog: {fileID: 1964413380196037106, guid: 41f2c2fbec9cd4085a3a3e2cae40770b, type: 3}
+  encounters:
+  - {fileID: -3452428964221040907, guid: 41f2c2fbec9cd4085a3a3e2cae40770b, type: 3}
+  - {fileID: -546883951526127702, guid: 41f2c2fbec9cd4085a3a3e2cae40770b, type: 3}
+  - {fileID: -3685282737040722810, guid: 41f2c2fbec9cd4085a3a3e2cae40770b, type: 3}
   patientQuestion: {fileID: 1551338291}
   bearAnswer: {fileID: 834652585}
   patientResponse: {fileID: 189174072}
@@ -1615,7 +1618,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8038106010238397316, guid: a6420a6a41a5b4911bbde1024ea6214d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 22.7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8038106010238397316, guid: a6420a6a41a5b4911bbde1024ea6214d, type: 3}
       propertyPath: m_AnchoredPosition.y

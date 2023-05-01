@@ -8,7 +8,7 @@ public class Conversation : MonoBehaviour
     [field:SerializeField] public UnityEvent OnConversationEnd { get; private set; }
     [field:SerializeField] public UnityEvent OnRoundEnd { get; private set; }
 
-    [SerializeField] Dialog dialog;
+    [SerializeField] List<Encounter> encounters;
 
     [Header("Text bubbles for questions")]
     [SerializeField] TextBubble patientQuestion;
@@ -68,7 +68,7 @@ public class Conversation : MonoBehaviour
             roundIndex = 0;
             encounterIndex += 1;
 
-            if (encounterIndex >= dialog.encounters.Count)
+            if (encounterIndex >= encounters.Count)
             {
                 encounterIndex = 0;
                 // game over, go to bear;
@@ -99,7 +99,7 @@ public class Conversation : MonoBehaviour
 
     void SetupStateForNextRound()
     {
-        currentEncounter = dialog.encounters[encounterIndex];
+        currentEncounter = encounters[encounterIndex];
         currentEncounterRound = currentEncounter.Rounds[roundIndex];
     }
 }

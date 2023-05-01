@@ -570,6 +570,7 @@ MonoBehaviour:
   doodadOptions:
   - {fileID: -7940701038213847417, guid: 75b08a252317743c9b142d85bda86c48, type: 3}
   - {fileID: -8494077311477243218, guid: 75b08a252317743c9b142d85bda86c48, type: 3}
+  - {fileID: 4201408229493113922, guid: 75b08a252317743c9b142d85bda86c48, type: 3}
   doodads:
   - {fileID: 30030061}
   - {fileID: 2119665324}

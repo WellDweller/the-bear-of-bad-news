@@ -1,6 +1,6 @@
 # The Bear of Bad News
 
-[![screenshot.png](https://static.jam.host/raw/3b8/44/z/5899f.png)](https://welldweller.github.io/machine-yearning/)
+[![screenshot.png](https://static.jam.host/raw/3b8/44/z/5899f.png)](https://welldweller.github.io/the-bear-of-bad-news/)
 
 Our entry for [Ludum Dare 53](https://ldjam.com/events/ludum-dare/53/the-bear-of-bad-news).
 
@@ -8,7 +8,7 @@ You are a bear doctor **delivering** bad news in a hospital.  Bears aren't great
 
 Includes 8 songs.  Can you find them all?
 
-**Play the game [here](https://welldweller.github.io/machine-yearning/).**
+**Play the game [here](https://welldweller.github.io/the-bear-of-bad-news/).**
 
 ## Minigame Instructions
 

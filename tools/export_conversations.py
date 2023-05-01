@@ -19,8 +19,9 @@ if __name__ == "__main__":
     for idx, worksheet in enumerate(worksheets):
         if worksheet.title in WORKSHEETS_TO_IGNORE:
             continue
+        worksheet_title = worksheet.title.lower()
 
-        encounter_obj = {"name": worksheet.title, "encounterRounds": []}
+        encounter_obj = {"name": worksheet_title, "encounterRounds": []}
 
         questions_column = worksheet.col_values(1)
 
@@ -28,12 +29,12 @@ if __name__ == "__main__":
             if question_text == "":
                 continue
 
-            question_obj = {"question": question_text, "responses": {}}
+            question_obj = {"question": question_text.lower(), "responses": {}}
 
             for row_index in range(start_row_index + 1, start_row_index + 4):
                 row_data = worksheet.row_values(row_index)
                 quality_descriptor = row_data[1].lower()
-                responses = row_data[2:]
+                responses = [text.lower() for text in row_data[2:]]
                 question_obj["responses"][quality_descriptor] = responses
 
             encounter_obj["encounterRounds"].append(question_obj)

@@ -477,7 +477,7 @@ MonoBehaviour:
   <OnSlideInComplete>k__BackingField:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1885500660}
         m_TargetAssemblyTypeName: Minigame, Assembly-CSharp
         m_MethodName: StartGame
         m_Mode: 1

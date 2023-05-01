@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -6,6 +7,10 @@ using UnityEngine;
 public class InfiniteHallway : MonoBehaviour
 {
     [SerializeField] SpriteRenderer hallwaySprite;
+    [SerializeField] List<Sprite> doodadOptions;
+    [SerializeField] List<Doodad> doodads;
+    [SerializeField] float moveDoodadWhenLessThanX;
+    [SerializeField] float doodadSpacing;
 
     float walkedDistance;
     float spriteWidth;
@@ -28,6 +33,11 @@ public class InfiniteHallway : MonoBehaviour
         clonedOffset = new(spriteWidth, 0, 0);
         mover = GetComponent<Mover>();
         mover.OnMove += Move;
+
+        foreach (var doodad in doodads)
+        {
+            RandomizeDoodad(doodad);
+        }
     }
 
     void OnDestroy()
@@ -47,5 +57,21 @@ public class InfiniteHallway : MonoBehaviour
         var newPosition = startingPosition + offset;
         hallwaySprite.transform.position = newPosition;
         clonedHallwaySprite.transform.position = newPosition + clonedOffset;
+
+        Vector3 doodadMove = new(-amount, 0, 0);
+        foreach (var doodad in doodads)
+        {
+            doodad.transform.position += doodadMove;
+            if (doodad.transform.position.x <= moveDoodadWhenLessThanX)
+            {
+                doodad.transform.position += new Vector3(doodadSpacing * doodads.Count, 0, 0);
+                RandomizeDoodad(doodad);
+            }
+        }
+    }
+
+    void RandomizeDoodad(Doodad doodad)
+    {
+        doodad.spriteRenderer.sprite = doodadOptions[Random.Range(0, doodadOptions.Count)];
     }
 }

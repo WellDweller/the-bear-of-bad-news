@@ -6,15 +6,14 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Data", menuName = "Custom/Dialog")]
 public class Dialog : ScriptableObject
 {
-    [SerializeField] public DialogData dialogData;
+    [SerializeField] public List<EncounterData> encounters;
 
     public void SetData(DialogData data)
     {
-        dialogData = data;
+        encounters = data.encounters;
     }
 }
 
-[Serializable]
 public class DialogData
 {
     public List<EncounterData> encounters;

@@ -22,7 +22,6 @@ public class MasherGame : Minigame
     [SerializeField] int stage = 0;
 
     // [SerializeField] string[,] dialog = { { "He eventually", "He", "Boy" }, { "succumbed to", "was killed by", "got got by" }, { "his sickness", "the wending arm of fate", "a blunder in the operating room" } };
-    [SerializeField] string response = "";
 
 
     // Start is called before the first frame update
@@ -107,7 +106,6 @@ public class MasherGame : Minigame
             // EndGame(result);
             this.enabled = false;
             stage = 0;
-            response = "";
             return;
         }
     }

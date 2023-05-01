@@ -23,6 +23,8 @@ public struct MinigameResult
 
 public class Minigame : MonoBehaviour
 {
+    static string[,] TEST_DIALOG = { { "your", "ur", "dat" }, { "husband", "mate", "boi" }, { "passed away", "ate it", "ded" } };
+
     // These static events used by the minigame loader
     public static event Action<Minigame> OnMinigameLoaded;
     
@@ -48,6 +50,7 @@ public class Minigame : MonoBehaviour
     void Awake()
     {
         OnMinigameLoaded?.Invoke(this);
+        dialog = TEST_DIALOG;
     }
 
     void OnDestroy()

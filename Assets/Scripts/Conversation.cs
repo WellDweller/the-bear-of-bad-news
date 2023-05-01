@@ -8,7 +8,12 @@ public class Conversation : MonoBehaviour
     [field:SerializeField] public UnityEvent OnConversationEnd { get; private set; }
     [field:SerializeField] public UnityEvent OnRoundEnd { get; private set; }
 
+    [Header("Encounter config")]
     [SerializeField] List<Encounter> encounters;
+    [SerializeField] Encounter goodEnding;
+    [SerializeField] Encounter medEnding;
+    [SerializeField] Encounter badEnding;
+
 
     [Header("Text bubbles for questions")]
     [SerializeField] TextBubble patientQuestion;
@@ -17,6 +22,7 @@ public class Conversation : MonoBehaviour
 
     [Header("Other config")]
     [SerializeField] MinigameLoader loader;
+    [SerializeField] Health healthComponent;
 
     // which person are we talking to
     int encounterIndex = 0;
@@ -28,11 +34,12 @@ public class Conversation : MonoBehaviour
 
     int currentLoop; // It would be better to hook this into some global game state keeping track of encounters instead
     bool gameOver;
+    bool didEndingEncounter;
 
 
     void Awake()
     {
-        SetupStateForNextRound();
+        SetupStateForNextEncounter();
     }
 
 
@@ -70,14 +77,24 @@ public class Conversation : MonoBehaviour
 
             if (encounterIndex >= encounters.Count)
             {
-                encounterIndex = 0;
-                // game over, go to bear;
-                OnConversationEnd?.Invoke();
+                // wew lad
+                if (didEndingEncounter)
+                {
+                    encounterIndex = 0;
+                    // game over, do outro
+                    OnConversationEnd?.Invoke();
+                }
+                else 
+                {
+                    SetFinalEncounter(healthComponent.CurrentHealth);
+                    Destroy(healthComponent);
+                    OnRoundEnd?.Invoke();
+                }
             }
             else
             {
                 // encounter over, walk to next encounter
-                SetupStateForNextRound();
+                SetupStateForNextEncounter();
                 OnRoundEnd?.Invoke();
             }
         }
@@ -97,9 +114,26 @@ public class Conversation : MonoBehaviour
         patientResponse.Hide();
     }
 
-    void SetupStateForNextRound()
+    void SetupStateForNextEncounter()
     {
         currentEncounter = encounters[encounterIndex];
+        SetupStateForNextRound();
+    }
+
+    void SetupStateForNextRound()
+    {
         currentEncounterRound = currentEncounter.Rounds[roundIndex];
+    }
+
+    void SetFinalEncounter(int health)
+    {
+        didEndingEncounter = true;
+        if (health == 3)
+            currentEncounter = goodEnding;
+        else if (health == 0)
+            currentEncounter = badEnding;
+        else
+            currentEncounter = medEnding;
+        SetupStateForNextRound();
     }
 }

@@ -1074,13 +1074,17 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   encounters:
-  - {fileID: -3452428964221040907, guid: 41f2c2fbec9cd4085a3a3e2cae40770b, type: 3}
   - {fileID: -546883951526127702, guid: 41f2c2fbec9cd4085a3a3e2cae40770b, type: 3}
   - {fileID: -3685282737040722810, guid: 41f2c2fbec9cd4085a3a3e2cae40770b, type: 3}
+  - {fileID: -3452428964221040907, guid: 41f2c2fbec9cd4085a3a3e2cae40770b, type: 3}
+  goodEnding: {fileID: -3981675761086745312, guid: 41f2c2fbec9cd4085a3a3e2cae40770b, type: 3}
+  medEnding: {fileID: -6684114725413355731, guid: 41f2c2fbec9cd4085a3a3e2cae40770b, type: 3}
+  badEnding: {fileID: -6110584034006746349, guid: 41f2c2fbec9cd4085a3a3e2cae40770b, type: 3}
   patientQuestion: {fileID: 1551338291}
   bearAnswer: {fileID: 834652585}
   patientResponse: {fileID: 189174072}
   loader: {fileID: 114434912}
+  healthComponent: {fileID: 1522560296}
 --- !u!1001 &1064671641
 PrefabInstance:
   m_ObjectHideFlags: 0

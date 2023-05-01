@@ -10,6 +10,8 @@ public class Health : MonoBehaviour
 
     [field:SerializeField] public UnityEvent OnDamage { get; private set; }
 
+    public int CurrentHealth => currentHealth;
+
     [SerializeField] Sprite emptyHit;
     [SerializeField] Sprite filledHit;
 
@@ -38,7 +40,7 @@ public class Health : MonoBehaviour
     public void TakeDamage()
     {
         if (currentHealth <= 0)
-            throw new System.Exception("Took damage after already dead!");
+            return;
         
         currentHealth -= 1;
 

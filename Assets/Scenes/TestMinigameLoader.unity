@@ -1440,8 +1440,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wiggleIntensity: 1
-  scale: {x: 2, y: 3}
-  offset: {x: 1, y: 0}
+  scale: {x: 1.6, y: 2.88}
+  offset: {x: 0.82, y: 0.39}
 --- !u!1 &1450771146
 GameObject:
   m_ObjectHideFlags: 0
@@ -1494,6 +1494,7 @@ MonoBehaviour:
   currentPatient: {fileID: 1064671642}
   bear: {fileID: 1798717132}
   conversationController: {fileID: 1031077658}
+  patientPrefabs: []
 --- !u!4 &1450771148
 Transform:
   m_ObjectHideFlags: 0
@@ -1834,8 +1835,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wiggleIntensity: 1
-  scale: {x: 2, y: 3}
-  offset: {x: 1, y: 0}
+  scale: {x: 1.85, y: 2.8}
+  offset: {x: 1.24, y: 0.24}
 --- !u!1 &1707335547
 GameObject:
   m_ObjectHideFlags: 0

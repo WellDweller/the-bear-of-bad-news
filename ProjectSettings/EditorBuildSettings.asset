@@ -8,10 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Initialization.unity
     guid: 6f27d3c5ed5c64408a639dd7179d2ba7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ArtTestScene.unity
     guid: ed5134321550949e0ab1be8df2c808a8
   - enabled: 1
@@ -29,5 +29,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Minigames/MasherMinigame.unity
     guid: c8fe63866aaf24b00baecab0dc54531b
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 8eec3a7b6052b4886a7513ab0af0d7b5
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: a351fbe2c666d4e2f91ddb0beee692f5, type: 2}

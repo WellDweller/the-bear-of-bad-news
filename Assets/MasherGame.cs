@@ -7,8 +7,11 @@ public class MasherGame : Minigame
     [SerializeField] RectTransform outerRect;
     [SerializeField] RectTransform arrow;
     [SerializeField] RectTransform timerFill;
-    [SerializeField] MedicalFormBox medicalFormBox;
-    [SerializeField] TextBubble[] textBubbles;
+
+    [SerializeField] List<MedicalFormBox> medicalFormBoxes;
+    [SerializeField] float yOffsetBetweenBoxes = 40;
+    [SerializeField] Transform transformToScootch;
+    [SerializeField] AnimationCurve scootchCurve;
 
     [SerializeField] float x = 0;
     [SerializeField] float step = 10;
@@ -27,7 +30,8 @@ public class MasherGame : Minigame
     // Start is called before the first frame update
     void Start()
     {
-        randomizeStage();
+        foreach (var box in medicalFormBoxes)
+            randomizeStage(box);
     }
 
     // Update is called once per frame
@@ -80,12 +84,15 @@ public class MasherGame : Minigame
 
         string part = "";
         int points = 0;
-        if (medicalFormBox.UnderlineRange.IsInRange(percent))
+
+        var targetBox = medicalFormBoxes[stage];
+
+        if (targetBox.UnderlineRange.IsInRange(percent))
         {
             part = dialog[stage, 0];
             points = 2;
         }
-        else if (medicalFormBox.HighlightRange.IsInRange(percent))
+        else if (targetBox.HighlightRange.IsInRange(percent))
         {
             points = 1;
             part = dialog[stage, 1];
@@ -97,8 +104,10 @@ public class MasherGame : Minigame
 
         elapsedTime = 0;
         CompleteStage(stage, part, points);
-        randomizeStage();
+        updateBetweenStages();
         PauseForDuration(1f);
+        StartCoroutine(Scootch(1f, transformToScootch));
+        StartCoroutine(Scootch(1f, arrow, -1));
         stage += 1;
 
         if (stage >= dialog.GetLength(0))
@@ -110,11 +119,15 @@ public class MasherGame : Minigame
         }
     }
 
-    void randomizeStage()
+    void randomizeStage(MedicalFormBox box)
+    {
+        box.HighlightRange = new MinMaxRange(.35f);
+        box.UnderlineRange = new MinMaxRange(.15f);
+    }
+
+    void updateBetweenStages()
     {
         x = minX;
-        medicalFormBox.HighlightRange = new MinMaxRange(.35f, .3f, 1f);
-        medicalFormBox.UnderlineRange = new MinMaxRange(.15f, .6f, .9f);
         degradeSpeed = Random.Range(25, 45);
     }
 
@@ -124,5 +137,23 @@ public class MasherGame : Minigame
         float toRange = toMax - toMin;
         float valueScaled = (value - fromMin) / fromRange;
         return toMin + (valueScaled * toRange);
+    }
+
+    IEnumerator Scootch(float duration, Transform thing, float direction = 1f)
+    {
+        var startTime = Time.time;
+        var startPosition = thing.localPosition;
+        var targetPosition = startPosition + new Vector3(0, yOffsetBetweenBoxes * direction, 0);
+        float progress = 0;
+
+        while (progress < 1f)
+        {
+            var lerpValue = scootchCurve.Evaluate(progress);
+            thing.localPosition = Vector3.Lerp(startPosition, targetPosition, lerpValue);
+            yield return null;
+            progress = (Time.time - startTime) / duration;
+        }
+
+        thing.localPosition = targetPosition;
     }
 }

@@ -128,7 +128,7 @@ public class MasherGame : Minigame
     void updateBetweenStages()
     {
         x = minX;
-        degradeSpeed = Random.Range(25, 45);
+        degradeSpeed = Random.Range(30, 60);
     }
 
     public static float Remap(float value, float fromMin, float fromMax, float toMin, float toMax)

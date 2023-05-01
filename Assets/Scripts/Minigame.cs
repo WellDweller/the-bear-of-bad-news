@@ -94,11 +94,11 @@ public class Minigame : MonoBehaviour
         }
 
         if (data.responses.good.Count > 3)
-            gameData[2, 0] += data.responses.good[3];
+            gameData[2, 0] += " " + data.responses.good[3];
         if (data.responses.med.Count > 3)
-            gameData[2, 1] += data.responses.med[3];
+            gameData[2, 1] += " " + data.responses.med[3];
         if (data.responses.bad.Count > 3)
-            gameData[2, 2] += data.responses.bad[3];
+            gameData[2, 2] += " " + data.responses.bad[3];
 
         dialog = gameData;
     }

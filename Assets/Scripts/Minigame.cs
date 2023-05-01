@@ -13,7 +13,7 @@ public struct MinigameResult
 
     public static MinigameResult operator +(MinigameResult a, MinigameResult b) {
         return new() {
-            text = a.text + b.text,
+            text = a.text + " " + b.text,
             score = a.score + b.score,
             stage = a.stage > b.stage ? a.stage : b.stage,
         };

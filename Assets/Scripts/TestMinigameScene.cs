@@ -30,7 +30,7 @@ public class TestMinigameScene : Minigame
         }
 
         // Pick a random response
-        int idx = Random.Range(0, dialog[0, stage].Length);
+        int idx = Random.Range(0, 3);
         string text = dialog[stage, idx];
         int score = 2 - idx;
 

@@ -102,7 +102,6 @@ public class MasherGame : Minigame
 
         if (stage >= dialog.GetLength(0))
         {
-            result.text = response;
             // EndGame(result);
             this.enabled = false;
             stage = 0;

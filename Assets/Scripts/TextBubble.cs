@@ -32,6 +32,7 @@ public class TextBubble : MonoBehaviour
     [SerializeField] TMPro.TextMeshProUGUI textMesh;
 
     Image bubbleImage;
+    RectTransform transformForLayout;
 
 
     CanvasGroup canvasGroup;
@@ -42,6 +43,7 @@ public class TextBubble : MonoBehaviour
     {
         canvasGroup = GetComponent<CanvasGroup>();
         bubbleImage = GetComponent<Image>();
+        transformForLayout = GetComponent<RectTransform>();
         Reset();
     }
 
@@ -50,7 +52,7 @@ public class TextBubble : MonoBehaviour
     public void Reset()
     {
         if (!startVisible)
-            textMesh.text = "";
+            SetText("");
 
         if (startTypingImmediately)
             StartTyping();
@@ -85,6 +87,12 @@ public class TextBubble : MonoBehaviour
         canvasGroup.alpha = 0;
     }
 
+    void SetText(string text)
+    {
+        textMesh.text = text;
+        LayoutRebuilder.ForceRebuildLayoutImmediate(transformForLayout);
+    }
+
     IEnumerator Typewrite(string text)
     {
         OnDialogStart?.Invoke();
@@ -98,7 +106,7 @@ public class TextBubble : MonoBehaviour
         for (int i = 0; i < text.Length; i++)
         {
             sb.Append(text[i]);
-            textMesh.text = sb.ToString();
+            SetText(sb.ToString());
             yield return new WaitForSeconds(delayBetweenCharacters);
         }
         SongManager.Instance?.PauseTyping();

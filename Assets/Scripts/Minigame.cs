@@ -77,17 +77,17 @@ public class Minigame : MonoBehaviour
         */
 
         string[,] gameData = new string[3, 3];
-        for (int i = 0; i < 3; i++)
+        for (int round = 0; round < 3; round++)
         {
-            gameData[i, 0] = data.responses.good[i];
-            gameData[i, 1] = data.responses.med[i];
-            gameData[i, 2] = data.responses.bad[i];
+            gameData[round, 0] = data.responses.good[round];
+            gameData[round, 1] = data.responses.med[round];
+            gameData[round, 2] = data.responses.bad[round];
         }
 
         if (data.responses.good.Count > 3)
             gameData[2, 0] += data.responses.good[3];
         if (data.responses.med.Count > 3)
-            gameData[2, 1] += data.responses.good[3];
+            gameData[2, 1] += data.responses.med[3];
         if (data.responses.bad.Count > 3)
             gameData[2, 2] += data.responses.bad[3];
 

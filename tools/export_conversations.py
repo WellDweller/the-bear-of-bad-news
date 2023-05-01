@@ -28,13 +28,13 @@ if __name__ == "__main__":
             if question_text == "":
                 continue
 
-            question_obj = {"question": question_text, "responses": []}
+            question_obj = {"question": question_text, "responses": {}}
 
             for row_index in range(start_row_index + 1, start_row_index + 4):
                 row_data = worksheet.row_values(row_index)
                 quality_descriptor = row_data[1].lower()
                 responses = row_data[2:]
-                question_obj["responses"].append({quality_descriptor: responses})
+                question_obj["responses"][quality_descriptor] = responses
 
             encounter_obj["encounterRounds"].append(question_obj)
 

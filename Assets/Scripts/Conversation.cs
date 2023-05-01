@@ -14,41 +14,33 @@ public class Conversation : MonoBehaviour
     [Header("Text bubbles for questions")]
     [SerializeField] TextBubble patientQuestion;
     [SerializeField] TextBubble bearAnswer;
-    [SerializeField] TextBubble patientResponse;
 
     [Header("Other config")]
     [SerializeField] MinigameLoader loader;
 
     [SerializeField, Min(1)] int loops;
 
-    int currentLoop;
+    int currentLoop; // It would be better to hook this into some global game state keeping track of encounters instead
     bool gameOver;
 
-    void Start()
-    {
-        Debug.Log("dialog: ");
-        Debug.Log(dialog);
-        Debug.Log("dialog.Data:");
-        Debug.Log(dialog.Encounters);
-        // Debug.Log(dialog.Data.Keys);
-        // encounterStageNames = dialog.Data.Keys.ToList();
-        // Debug.Log(encounterStageNames);
+    private void Start() {
+        loops = dialog.dialogData.encounters.Count();
     }
 
-    private Encounter GetCurrentEncounterData()
+    private EncounterRoundData GetCurrentEncounterRoundData()
     {
-        return dialog.Encounters[currentEncounterIndex];
+        return dialog.dialogData.encounters[currentLoop].encounterRounds[currentEncounterIndex];
     } 
 
     public void StartConversation()
     {
-        Encounter currentEncounter = GetCurrentEncounterData();
+        EncounterRoundData currentEncounter = GetCurrentEncounterRoundData();
         patientQuestion.Reset();
         bearAnswer.Reset();
-        patientResponse.Reset();
 
-        patientQuestion.Text = currentEncounter.encounterRounds[currentLoop].question;
+        patientQuestion.Text = currentEncounter.question;
         patientQuestion.StartTyping();
+        currentEncounterIndex += 1;
     }
 
     public void GameOver()
@@ -59,6 +51,7 @@ public class Conversation : MonoBehaviour
     public void EndConversation()
     {
         currentLoop += 1;
+        currentEncounterIndex = 0;
 
         if (gameOver || currentLoop >= loops)
         {
@@ -73,6 +66,5 @@ public class Conversation : MonoBehaviour
     {
         patientQuestion.Hide();
         bearAnswer.Hide();
-        patientResponse.Hide();
     }
 }

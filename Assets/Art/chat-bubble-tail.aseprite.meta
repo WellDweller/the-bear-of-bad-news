@@ -119,15 +119,15 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: chat-bubble-tail
     originalName: 
-    pivot: {x: 0.48387095, y: -0.032258064}
+    pivot: {x: -0.7777778, y: -2.5555556}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 31
-      height: 31
+      width: 9
+      height: 9
     spriteID: b1de1a665a84b4e388350dcd86d4822e
     spriteBone: []
     spriteOutline: []
@@ -149,10 +149,10 @@ ScriptedImporter:
     - name: chat-bubble-tail
       frameIndex: 0
       cellRect:
-        x: 1
-        y: 1
-        width: 31
-        height: 31
+        x: 23
+        y: 23
+        width: 9
+        height: 9
       spriteId: b1de1a665a84b4e388350dcd86d4822e
     linkedCells: []
     parentIndex: -1

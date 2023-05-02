@@ -16,6 +16,12 @@ public class TestMinigameScene : Minigame
 
     string[] buttonText = { "RROOOAAARRRR!", "GRRROOWWLLL!", "HUUUFFFFF!", "SNNAARRRRLL!", "YOOOWWWL!", "WHUUUUFFF" };
 
+    [Header("Timer stuff")]
+    [SerializeField] RectTransform timerFill;
+    [SerializeField] RectTransform outerRect;
+    public float duration = 3f;
+    [SerializeField] float elapsedTime = 0f;
+
     void Start()
     {
     }
@@ -37,6 +43,7 @@ public class TestMinigameScene : Minigame
         string text = dialog[stage, idx];
         int score = 2 - idx;
 
+        elapsedTime = 0;
         CompleteStage(stage, text, score);
         randomizeButtonText();
         PauseForDuration(.5f);
@@ -62,6 +69,25 @@ public class TestMinigameScene : Minigame
 
     void Update()
     {
+        if (stage < 3)
+        {
+            updateTimer();
+        }
+    }
+
+    void updateTimer()
+    {
+        var totalWidth = outerRect.rect.width;
+        elapsedTime += Time.deltaTime;
+        float lerpVal = Mathf.Clamp01(elapsedTime / duration);
+        float rightEdge = Mathf.Lerp(0f, totalWidth, lerpVal);
+        timerFill.offsetMax = new Vector2(-rightEdge, timerFill.offsetMax.y);
+
+        if (lerpVal == 1)
+        {
+            // evaluateArrow(arrowX);
+            Speak();
+        }
     }
 
 }

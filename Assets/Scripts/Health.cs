@@ -65,6 +65,7 @@ public class Health : MonoBehaviour
             obj.transform.SetParent(transform);
 
             var renderer = obj.AddComponent<Image>();
+            renderer.transform.localPosition = Vector3.zero;
             renderer.transform.localScale = Vector3.one;
             renderers.Push(renderer);
         }
